@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "854500610690",
+    "firebase_url": "https://rbplants-c85ea.firebaseio.com",
+    "project_id": "rbplants-c85ea",
+    "storage_bucket": "rbplants-c85ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854500610690:android:8cbbb347b16ec284",
+        "android_client_info": {
+          "package_name": "com.arkhipov.ayur.rbplants"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854500610690-cns1gdljgbt6fk7pp23ks0all9555cmc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arkhipov.ayur.rbplants",
+            "certificate_hash": "ef377274f00ac3fdb6f77340ec7eecb86c54bd3f"
+          }
+        },
+        {
+          "client_id": "854500610690-ddniq7dtqnom1kclu7j8jfcrqd1nir4o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwaBqWwVhhHIw9AuXnHiahOTq1NX5DE2k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854500610690-ddniq7dtqnom1kclu7j8jfcrqd1nir4o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

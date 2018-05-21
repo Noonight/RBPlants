@@ -14,22 +14,17 @@ import javax.inject.Inject
 
 class AuthActivity : MvpActivity<AuthView, AuthPresenter>(), AuthView {
 
-    @Inject
-    lateinit var authPresenter: AuthPresenter
-
     protected var authComponent: AuthComponent? = null
 
-    fun injectDependencies() {
+    override fun injectDependencies() {
         authComponent = DaggerAuthComponent.builder().appModule(AppModule(App.get(this))).build()
         authComponent?.inject(this)
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         injectDependencies()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
-
 
         initViews()
     }

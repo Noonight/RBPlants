@@ -1,7 +1,8 @@
 package com.arkhipov.ayur.rbplants.authorization
 
-import com.hannesdorfmann.mosby3.mvp.MvpView
+import com.arkhipov.ayur.rbplants.base.BaseMvpView
 
-interface AuthView : MvpView {
+abstract interface AuthView : BaseMvpView
+{
 
 }

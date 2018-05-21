@@ -1,7 +1,8 @@
 package com.arkhipov.ayur.rbplants.authorization.sign_up
 
-import com.hannesdorfmann.mosby3.mvp.MvpView
+import com.arkhipov.ayur.rbplants.base.BaseMvpView
 
-interface SignUpView : MvpView {
+interface SignUpView : BaseMvpView
+{
 
 }

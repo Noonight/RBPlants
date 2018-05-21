@@ -5,6 +5,11 @@ import com.hannesdorfmann.mosby3.mvp.MvpFragment
 
 class SignUpFragment : MvpFragment<SignUpView, SignUpPresenter>(), SignUpView {
 
+    override fun injectDependencies()
+    {
+
+    }
+
     override fun createPresenter(): SignUpPresenter {
         return SignUpPresenter()
     }

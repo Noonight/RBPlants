@@ -3,6 +3,9 @@ package com.arkhipov.ayur.rbplants.di.components
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.authorization.AuthActivity
 import com.arkhipov.ayur.rbplants.authorization.AuthPresenter
+import com.arkhipov.ayur.rbplants.authorization.sign_in.SignInFragment
+import com.arkhipov.ayur.rbplants.authorization.sign_in.SignInPresenter
+import com.arkhipov.ayur.rbplants.authorization.sign_up.SignUpFragment
 import com.arkhipov.ayur.rbplants.di.modules.AppModule
 import com.arkhipov.ayur.rbplants.di.modules.ContextModule
 import com.arkhipov.ayur.rbplants.di.modules.FirebaseModule
@@ -27,4 +30,22 @@ interface AuthComponent
     fun inject(authActivity: AuthActivity)
 
     fun presenter(): AuthPresenter
+}
+
+@Singleton
+@Component(modules = [AppModule::class])
+interface SignInComponent
+{
+    fun inject(signInFragment: SignInFragment)
+
+    fun presenter(): SignInPresenter
+}
+
+@Singleton
+@Component(modules = [AppModule::class])
+interface SignUpComponent
+{
+    fun inject(signUpFragment: SignUpFragment)
+
+    fun presenter(): SignUpFragment
 }

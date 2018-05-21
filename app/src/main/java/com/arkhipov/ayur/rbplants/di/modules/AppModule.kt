@@ -2,7 +2,7 @@ package com.arkhipov.ayur.rbplants.di.modules
 
 import android.content.Context
 import com.arkhipov.ayur.rbplants.App
-import com.arkhipov.ayur.rbplants.AppRealmModule
+import com.arkhipov.ayur.rbplants.data.AppRealmModule
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage

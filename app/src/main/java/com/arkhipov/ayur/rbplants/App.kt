@@ -3,15 +3,13 @@ package com.arkhipov.ayur.rbplants
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import com.arkhipov.ayur.rbplants.di.components.AppComponent
-import com.arkhipov.ayur.rbplants.di.components.DaggerAppComponent
+import com.arkhipov.ayur.rbplants.di.AppComponent
+import com.arkhipov.ayur.rbplants.di.DaggerAppComponent
 import com.arkhipov.ayur.rbplants.di.modules.ContextModule
-import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 import io.realm.Realm
 import javax.inject.Inject
-import javax.inject.Singleton
 
 class App : Application() {
 

@@ -1,8 +1,8 @@
 package com.arkhipov.ayur.rbplants.authorization
 
-import com.arkhipov.ayur.rbplants.base.BaseMvpView
+import com.arkhipov.ayur.rbplants.base.mvp.MvpView
 
-abstract interface AuthView : BaseMvpView
+interface AuthView : MvpView
 {
 
 }

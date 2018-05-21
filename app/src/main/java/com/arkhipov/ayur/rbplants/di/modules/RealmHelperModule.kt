@@ -1,6 +1,6 @@
 package com.arkhipov.ayur.rbplants.di.modules
 
-import com.arkhipov.ayur.rbplants.AppRealmModule
+import com.arkhipov.ayur.rbplants.data.AppRealmModule
 import dagger.Module
 import dagger.Provides
 import io.realm.Realm

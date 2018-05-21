@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.rbplants
+package com.arkhipov.ayur.rbplants.data
 
 import io.realm.annotations.RealmModule
 

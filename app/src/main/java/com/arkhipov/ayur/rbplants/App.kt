@@ -11,7 +11,10 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings
 import io.realm.Realm
 import javax.inject.Inject
 
-class App : Application() {
+
+
+class App : Application()
+{
 
     @Inject
     lateinit var context: Context
@@ -21,14 +24,16 @@ class App : Application() {
 
     lateinit var component: AppComponent
 
-    companion object {
+    companion object
+    {
         @SuppressLint("StaticFieldLeak")
         lateinit var instance: App
 
         operator fun get(context: Context) = context.applicationContext as App
     }
 
-    override fun onCreate() {
+    override fun onCreate()
+    {
         instance = this
         super.onCreate()
 
@@ -37,14 +42,22 @@ class App : Application() {
 
         //FirebaseApp.initializeApp(context)
         firestore.firestoreSettings = FirebaseFirestoreSettings.Builder()
-                .setPersistenceEnabled(false)
-                .build()
+            .setPersistenceEnabled(false) // true
+            .build()
 
         Realm.init(this)
 
     }
 
     private fun createDaggerComponents() = DaggerAppComponent.builder()
-            .contextModule(ContextModule(this))
-            .build()
+        .contextModule(ContextModule(this))
+        .build()
+
+    /**
+     * Initailization librari config for navigation menu
+     * */
+    private fun initNavigation()
+    {
+        //NavigationDefaultsHolder.
+    }
 }

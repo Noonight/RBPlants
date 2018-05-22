@@ -3,14 +3,11 @@ package com.arkhipov.ayur.rbplants.authorization
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.WindowManager
-import android.widget.Toast
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.authorization.sign_in.SignInFragment
 import com.arkhipov.ayur.rbplants.base.Log
 import com.arkhipov.ayur.rbplants.main.MainActivity
-import com.google.firebase.auth.FirebaseUser
 import javax.inject.Inject
 
 class AuthActivity : AppCompatActivity(), AuthView
@@ -24,7 +21,7 @@ class AuthActivity : AppCompatActivity(), AuthView
         setContentView(R.layout.activity_auth)
 
         App[this].component.inject(this)
-
+        presenter.attachView(this)
         initViews()
     }
 
@@ -33,9 +30,14 @@ class AuthActivity : AppCompatActivity(), AuthView
         /*
         * Скрывает строку состояния
         * */
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+/*
+        val toolbar = findViewById<Toolbar>(R.id.toolbar_auth)
+        setSupportActionBar(toolbar)
 
-        presenter.attachView(this)
+        supportActionBar*/
+
+        //FirebaseAuth.getInstance().signOut()
 
         /*if (presenter.getCurrentUser() != null)
             Toast.makeText(this, "Current user is here!! welcome back", Toast.LENGTH_LONG).show()

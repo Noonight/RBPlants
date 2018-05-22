@@ -5,16 +5,18 @@ import android.text.TextUtils;
 
 public final class Log {
 
+    private final static String mock = "\t\t\tDEBUGG";
+
     public static void w(Exception e) {
-        android.util.Log.w(getLocation(), e);
+        android.util.Log.w(getLocation(),mock, e);
     }
 
     public static void l() {
-        android.util.Log.d(getLocation(), "");
+        android.util.Log.d(getLocation(), "" + mock);
     }
 
     public static void d(String msg) {
-        android.util.Log.d(getLocation(),/* getLocation() + */msg + " ---------------------------------------------------- ");
+        android.util.Log.d(getLocation(),/* getLocation() + */msg + mock);
     }
 
     private static String getLocation() {

@@ -6,13 +6,9 @@
     android:background="#0099cc"
     tools:context=".authorization.AuthActivity">
 
-    <TextView
-        android:gravity="center"
-        android:textSize="34pt"
-        android:textColor="#fff"
-        android:layout_gravity="center_vertical"
-        android:text="Hello"
+    <FrameLayout
+        android:id="@+id/auth_fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

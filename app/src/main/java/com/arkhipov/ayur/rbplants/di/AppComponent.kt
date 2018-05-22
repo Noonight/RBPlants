@@ -11,6 +11,7 @@ import com.arkhipov.ayur.rbplants.di.modules.AppModule
 import com.arkhipov.ayur.rbplants.di.modules.ContextModule
 import com.arkhipov.ayur.rbplants.di.modules.FirebaseModule
 import com.arkhipov.ayur.rbplants.di.modules.RealmHelperModule
+import com.arkhipov.ayur.rbplants.main.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 
@@ -26,6 +27,8 @@ interface AppComponent
     fun inject(signInFragment: SignInFragment)
 
     fun inject(signUpFragment: SignUpFragment)
+
+    fun inject(mainActivity: MainActivity)
 }
 
 /*@Singleton

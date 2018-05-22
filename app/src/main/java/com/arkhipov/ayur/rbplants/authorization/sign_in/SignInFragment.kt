@@ -1,16 +1,19 @@
 package com.arkhipov.ayur.rbplants.authorization.sign_in
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
-import com.arkhipov.ayur.rbplants.di.modules.AppModule
+import kotlinx.android.synthetic.main.fragment_sign_in.*
 import javax.inject.Inject
 
 class SignInFragment : Fragment(), SignInView {
+
 
     @Inject
     lateinit var presenter: SignInPresenter
@@ -39,7 +42,18 @@ class SignInFragment : Fragment(), SignInView {
         initViews()
     }
 
+    @SuppressLint("ResourceAsColor")
     fun initViews() {
+
+        //activity!!.actionBar.customView.setBackgroundColor(R.color.browser_actions_divider_color)
+
+        btn_sign_in_signin.setOnClickListener {
+            presenter.signInEmailPassword(et_email_signin.text.toString(), et_password_signin.text.toString())
+        }
+
+        btn_sign_up_signin.setOnClickListener {
+
+        }
 
     }
 

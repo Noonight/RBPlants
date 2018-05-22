@@ -10,6 +10,8 @@ import com.arkhipov.ayur.rbplants.base.Log
 import com.arkhipov.ayur.rbplants.main.MainActivity
 import javax.inject.Inject
 
+import com.arkhipov.ayur.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
+
 class AuthActivity : AppCompatActivity(), AuthView
 {
     @Inject
@@ -22,6 +24,13 @@ class AuthActivity : AppCompatActivity(), AuthView
 
         App[this].component.inject(this)
         presenter.attachView(this)
+
+        NavigationDefaultsHolder.navigationDefaults()
+            .navigationIconListener {
+                Log.d("Navigation item BACK pressed!")
+                onBackPressed()
+            }
+
         initViews()
     }
 
@@ -57,7 +66,7 @@ class AuthActivity : AppCompatActivity(), AuthView
         Log.d("Check auth user")
         if (presenter.getCurrentUser() != null)
         {
-            Log.d("User found: ${presenter.getCurrentUser().toString()}")
+            Log.d("User found: ${presenter.getCurrentUser()!!.email}")
             showMain()
         } else
         {

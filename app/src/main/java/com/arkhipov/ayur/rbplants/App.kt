@@ -3,6 +3,7 @@ package com.arkhipov.ayur.rbplants
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import com.arkhipov.ayur.fragmentnavigations.NavigationDefaults
 import com.arkhipov.ayur.rbplants.di.AppComponent
 import com.arkhipov.ayur.rbplants.di.DaggerAppComponent
 import com.arkhipov.ayur.rbplants.di.modules.ContextModule
@@ -11,7 +12,8 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings
 import io.realm.Realm
 import javax.inject.Inject
 
-
+import com.arkhipov.ayur.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
+import com.arkhipov.ayur.rbplants.navigation.NavigationIconType
 
 class App : Application()
 {
@@ -47,6 +49,7 @@ class App : Application()
 
         Realm.init(this)
 
+        initNavigation()
     }
 
     private fun createDaggerComponents() = DaggerAppComponent.builder()
@@ -58,6 +61,9 @@ class App : Application()
      * */
     private fun initNavigation()
     {
-        //NavigationDefaultsHolder.
+        NavigationDefaultsHolder.initDefaults(NavigationDefaults()
+            .navigationIcon(NavigationIconType.BACK, R.drawable.arrow_left)
+            .navigationIcon(NavigationIconType.ACCOUNT, R.drawable.account)
+            .defaultNavigationIconType(NavigationIconType.ACCOUNT))
     }
 }

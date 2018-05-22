@@ -27,7 +27,6 @@ class AuthActivity : AppCompatActivity(), AuthView
 
         NavigationDefaultsHolder.navigationDefaults()
             .navigationIconListener {
-                Log.d("Navigation item BACK pressed!")
                 onBackPressed()
             }
 
@@ -96,5 +95,11 @@ class AuthActivity : AppCompatActivity(), AuthView
         Log.d("Start MainActivity")
         finish()
         Log.d("Finish AuthActivity")
+    }
+
+    override fun onBackPressed()
+    {
+        super.onBackPressed()
+        Log.d("Navigation item BACK pressed!")
     }
 }

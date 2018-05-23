@@ -4,4 +4,8 @@ import com.arkhipov.ayur.rbplants.base.mvp.MvpView
 
 interface SignInView : MvpView
 {
+    /**
+     * Show [SignUpFragment]
+     * */
+    fun showSignUp()
 }

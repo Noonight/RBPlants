@@ -1,12 +1,12 @@
-package com.arkhipov.ayur.fragmentnavigations;
+package com.arkhipov.ayur.rbplants.fragmentnavigations;
 
 import android.view.View;
 
-import com.arkhipov.ayur.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder;
-import com.arkhipov.ayur.fragmentnavigations.layoutfactory.DummyLayoutFactory;
-import com.arkhipov.ayur.fragmentnavigations.layoutfactory.IdLayoutFactory;
-import com.arkhipov.ayur.fragmentnavigations.layoutfactory.LayoutFactory;
-import com.arkhipov.ayur.fragmentnavigations.layoutfactory.NavigationLayoutFactory;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory.DummyLayoutFactory;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory.IdLayoutFactory;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory.LayoutFactory;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory.NavigationLayoutFactory;
 
 public final class AutoLayoutNavigationBuilder extends NavigationBuilder<AutoLayoutNavigationBuilder> {
     private boolean includeToolbar;

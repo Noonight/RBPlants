@@ -1,9 +1,10 @@
-package com.arkhipov.ayur.fragmentnavigations;
+package com.arkhipov.ayur.rbplants.fragmentnavigations;
 
 import android.graphics.drawable.Drawable;
 
-import com.arkhipov.ayur.fragmentnavigations.layoutfactory.LayoutFactory;
-import com.arkhipov.ayur.fragmentnavigations.menu.MenuActions;
+import com.arkhipov.ayur.rbplants.R;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory.LayoutFactory;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.menu.MenuActions;
 
 import java.util.ArrayList;
 import java.util.List;

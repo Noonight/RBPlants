@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.fragmentnavigations.layoutfactory;
+package com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory;
 
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.arkhipov.ayur.rbplants.R;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
-import com.arkhipov.ayur.fragmentnavigations.R;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.widget.LinearLayout.VERTICAL;
-import static com.arkhipov.ayur.fragmentnavigations.AndroidUtils.dp;
+import static com.arkhipov.ayur.rbplants.fragmentnavigations.AndroidUtils.dp;
 
 public final class NavigationLayoutFactory implements LayoutFactory {
     private final boolean includeToolbar;

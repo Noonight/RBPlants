@@ -2,7 +2,7 @@ package com.arkhipov.ayur.rbplants.main
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.arkhipov.ayur.fragmentnavigations.NavigationDefaults
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationDefaults
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.base.Log

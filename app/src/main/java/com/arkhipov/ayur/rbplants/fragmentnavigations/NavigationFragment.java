@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.fragmentnavigations;
+package com.arkhipov.ayur.rbplants.fragmentnavigations;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,18 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationIcons.NavigationIcon;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory.DummyLayoutFactory;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory.LayoutFactory;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.menu.MenuActions;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation.OnTabSelectedListener;
-import com.arkhipov.ayur.fragmentnavigations.NavigationIcons.NavigationIcon;
-import com.arkhipov.ayur.fragmentnavigations.layoutfactory.DummyLayoutFactory;
-import com.arkhipov.ayur.fragmentnavigations.layoutfactory.LayoutFactory;
-import com.arkhipov.ayur.fragmentnavigations.menu.MenuActions;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
+import static com.arkhipov.ayur.rbplants.fragmentnavigations.AndroidUtils.bind;
+import static com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationBuilder.NO_NAV_ICON;
 import static com.aurelhubert.ahbottomnavigation.AHBottomNavigation.TitleState.ALWAYS_SHOW;
-import static com.arkhipov.ayur.fragmentnavigations.AndroidUtils.bind;
-import static com.arkhipov.ayur.fragmentnavigations.NavigationBuilder.NO_NAV_ICON;
 
 public abstract class NavigationFragment extends Fragment implements OnTabSelectedListener {
     private static final LayoutFactory DUMMY_FACTORY = new DummyLayoutFactory(null);

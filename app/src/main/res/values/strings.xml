@@ -6,4 +6,7 @@
     <string name="email_hint">Email</string>
     <string name="recovery_password">Recovery password</string>
     <string name="hello">Hello</string>
+    <string name="confirm_exit">Confirm exit?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
 </resources>

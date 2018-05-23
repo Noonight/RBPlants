@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.fragmentnavigations;
+package com.arkhipov.ayur.rbplants.fragmentnavigations;
 
 
 import android.graphics.drawable.Drawable;
@@ -6,8 +6,8 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.arkhipov.ayur.fragmentnavigations.NavigationIcons.NavigationIcon;
-import com.arkhipov.ayur.fragmentnavigations.NavigationItems.NavigationItem;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationIcons.NavigationIcon;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationItems.NavigationItem;
 
 import static java.util.Arrays.asList;
 

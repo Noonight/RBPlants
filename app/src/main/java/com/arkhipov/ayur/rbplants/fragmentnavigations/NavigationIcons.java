@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.fragmentnavigations;
+package com.arkhipov.ayur.rbplants.fragmentnavigations;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -12,7 +12,7 @@ import java.util.Collection;
 
 import static android.support.graphics.drawable.VectorDrawableCompat.create;
 import static android.support.v4.graphics.drawable.DrawableCompat.setTint;
-import static com.arkhipov.ayur.fragmentnavigations.AndroidUtils.color;
+import static com.arkhipov.ayur.rbplants.fragmentnavigations.AndroidUtils.color;
 
 public class NavigationIcons extends ArrayList<NavigationIcons.NavigationIcon> {
 

@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.fragmentnavigations;
+package com.arkhipov.ayur.rbplants.fragmentnavigations;
 
 import android.content.Context;
 import android.content.res.Resources;

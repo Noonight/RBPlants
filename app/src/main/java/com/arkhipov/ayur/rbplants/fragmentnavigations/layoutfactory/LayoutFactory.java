@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.fragmentnavigations.layoutfactory;
+package com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory;
 
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;

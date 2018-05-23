@@ -6,15 +6,17 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import com.arkhipov.ayur.rbplants.fragmentnavigations.AutoLayoutNavigationBuilder
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationBuilder
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationFragment
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
+import com.arkhipov.ayur.rbplants.authorization.sign_up.SignUpFragment
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import javax.inject.Inject
 
-class SignInFragment : Fragment(), SignInView {
-
-
+class SignInFragment : NavigationFragment(), SignInView
+{
     @Inject
     lateinit var presenter: SignInPresenter
 
@@ -28,12 +30,20 @@ class SignInFragment : Fragment(), SignInView {
         }
     }
 
+    override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>>
+    {
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_sign_in)
+            .includeToolbar()
+            .toolbarTitleRes(R.string.sign_in)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
-        val view = inflater.inflate(R.layout.fragment_sign_in, container, false)
+        //val view = inflater.inflate(R.layout.fragment_sign_in, container, false)
         App[activity!!].component.inject(this)
         presenter.attachView(this)
-        return view
+        //return view
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
@@ -43,18 +53,24 @@ class SignInFragment : Fragment(), SignInView {
     }
 
     @SuppressLint("ResourceAsColor")
-    fun initViews() {
-
-        //activity!!.actionBar.customView.setBackgroundColor(R.color.browser_actions_divider_color)
-
+    fun initViews()
+    {
         btn_sign_in_signin.setOnClickListener {
             presenter.signInEmailPassword(et_email_signin.text.toString(), et_password_signin.text.toString())
         }
 
         btn_sign_up_signin.setOnClickListener {
-
+            showSignUp()
         }
+    }
 
+    override fun showSignUp()
+    {
+        activity!!.supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.auth_fragment_container, SignUpFragment(), SignUpFragment::javaClass.name)
+            .addToBackStack(null)
+            .commit()
     }
 
 }

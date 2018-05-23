@@ -1,7 +1,7 @@
-package com.arkhipov.ayur.fragmentnavigations;
+package com.arkhipov.ayur.rbplants.fragmentnavigations;
 
-import com.arkhipov.ayur.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder;
-import com.arkhipov.ayur.fragmentnavigations.layoutfactory.LayoutFactory;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder;
+import com.arkhipov.ayur.rbplants.fragmentnavigations.layoutfactory.LayoutFactory;
 
 public final class CustomLayoutNavigationBuilder extends NavigationBuilder<CustomLayoutNavigationBuilder> {
 

@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.fragmentnavigations.menu;
+package com.arkhipov.ayur.rbplants.fragmentnavigations.menu;
 
 import android.support.v7.widget.PopupMenu;
 import android.util.SparseArray;

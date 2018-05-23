@@ -35,6 +35,7 @@ class SignInFragment : NavigationFragment(), SignInView
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_sign_in)
             .includeToolbar()
             .toolbarTitleRes(R.string.sign_in)
+            .toolbarNavigationIcon(-1)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?

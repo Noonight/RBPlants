@@ -64,6 +64,6 @@ class App : Application()
         NavigationDefaultsHolder.initDefaults(NavigationDefaults()
             .navigationIcon(NavigationIconType.BACK, R.drawable.arrow_left)
             .navigationIcon(NavigationIconType.ACCOUNT, R.drawable.account)
-            .defaultNavigationIconType(NavigationIconType.ACCOUNT))
+            .defaultNavigationIconType(NavigationIconType.BACK))
     }
 }

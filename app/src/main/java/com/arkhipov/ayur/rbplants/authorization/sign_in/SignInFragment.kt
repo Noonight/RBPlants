@@ -6,11 +6,13 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.arkhipov.ayur.rbplants.fragmentnavigations.AutoLayoutNavigationBuilder
 import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationBuilder
 import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationFragment
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
+import com.arkhipov.ayur.rbplants.authorization.AuthActivity
 import com.arkhipov.ayur.rbplants.authorization.sign_up.SignUpFragment
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import javax.inject.Inject
@@ -57,7 +59,8 @@ class SignInFragment : NavigationFragment(), SignInView
     fun initViews()
     {
         btn_sign_in_signin.setOnClickListener {
-            presenter.signInEmailPassword(et_email_signin.text.toString(), et_password_signin.text.toString())
+            presenter.onSignInButtonPressed(et_email_signin.text.toString(), et_password_signin.text.toString())
+            //presenter.signInEmailPassword(et_email_signin.text.toString(), et_password_signin.text.toString())
         }
 
         btn_sign_up_signin.setOnClickListener {
@@ -72,6 +75,21 @@ class SignInFragment : NavigationFragment(), SignInView
             .replace(R.id.auth_fragment_container, SignUpFragment(), SignUpFragment::javaClass.name)
             .addToBackStack(null)
             .commit()
+    }
+
+    override fun showMain()
+    {
+        (activity!! as AuthActivity).showMain()
+    }
+
+    override fun showInvalidInputData()
+    {
+        Toast.makeText(activity, "Invalid input data!!!", Toast.LENGTH_LONG).show()
+    }
+
+    override fun showToast(message: String)
+    {
+        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
     }
 
 }

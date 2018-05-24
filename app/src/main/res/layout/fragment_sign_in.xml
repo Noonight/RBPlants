@@ -17,20 +17,36 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/et_email_signin"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/email_hint"
-                android:inputType="textEmailAddress" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/et_password_signin"
+                <EditText
+                    android:id="@+id/et_email_signin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_hint"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="@string/password_hint"
-                android:inputType="textPassword" />
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_password_signin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/password_hint"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+            </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
 
@@ -39,7 +55,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
+        android:layout_weight="2"
         android:orientation="vertical"
         android:paddingTop="16dp">
 
@@ -49,16 +65,16 @@
             android:orientation="horizontal">
 
             <Button
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:id="@+id/btn_sign_in_signin"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/sign_in" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:id="@+id/btn_sign_up_signin"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -67,14 +83,14 @@
 
         <TextView
             android:id="@+id/tv_recovery_password_signin"
-            android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="8dp"
             android:gravity="end"
-            android:textSize="16sp"
-            android:text="@string/recovery_password" />
+            android:padding="8dp"
+            android:text="@string/recovery_password"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

@@ -1,13 +1,8 @@
 package com.arkhipov.ayur.rbplants.authorization.sign_in
 
-import android.content.Context
-import android.support.v7.app.AppCompatActivity
-import com.arkhipov.ayur.rbplants.authorization.AuthActivity
 import com.arkhipov.ayur.rbplants.base.Log
 import com.arkhipov.ayur.rbplants.base.mvp.MvpPresenter
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
+import com.arkhipov.ayur.rbplants.utils.InputFieldUtils
 import com.google.firebase.auth.FirebaseAuth
 import javax.inject.Inject
 
@@ -16,8 +11,6 @@ class SignInPresenter @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) : MvpPresenter<SignInView>()
 {
-
-
     override fun updateView()
     {
 
@@ -29,20 +22,33 @@ class SignInPresenter @Inject constructor(
             .addOnCompleteListener {
                 if (it.isSuccessful)
                 {
+                    view.showMain()
                     Log.d(firebaseAuth.currentUser!!.email)
                 } else
                 {
                     Log.w(it.exception)
                 }
             }
-        /*firebaseAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(context as AppCompatActivity, object : OnCompleteListener<AuthResult> {
-                override fun onComplete(p0: Task<AuthResult>)
-                {
-                    Log.d(firebaseAuth.currentUser!!.email)
-                    view.showToast("Hello")
-                }
+            .addOnFailureListener {
+                view.showToast(it.message.toString())
+            }
+    }
 
-            })*/
+    fun onSignInButtonPressed(email: String, password: String)
+    {
+        if (!InputFieldUtils.isEmpty(email) && !InputFieldUtils.isEmpty(password))
+        {
+            signInEmailPassword(email, password)
+        } else
+        {
+            view.showInvalidInputData()
+        }
+        /*if (!InputFieldUtils.isEmailValid(email) && !InputFieldUtils.isPasswordValid(password))
+        {
+            view.showInvalidInputData()
+            return
+        }*/
+
+
     }
 }

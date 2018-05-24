@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
+import com.arkhipov.ayur.rbplants.authorization.AuthActivity
 import com.arkhipov.ayur.rbplants.fragmentnavigations.AutoLayoutNavigationBuilder
 import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationBuilder
 import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationFragment
+import com.google.android.gms.auth.api.proxy.AuthApiStatusCodes
 import javax.inject.Inject
 
 class SignUpFragment : NavigationFragment(), SignUpView {
@@ -19,7 +21,7 @@ class SignUpFragment : NavigationFragment(), SignUpView {
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>>
     {
-        return return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_sign_up)
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_sign_up)
             .includeToolbar()
             .toolbarTitleRes(R.string.sign_up)
     }
@@ -41,5 +43,10 @@ class SignUpFragment : NavigationFragment(), SignUpView {
 
     fun initViews() {
 
+    }
+
+    override fun showMain()
+    {
+        (activity!! as AuthActivity).showMain()
     }
 }

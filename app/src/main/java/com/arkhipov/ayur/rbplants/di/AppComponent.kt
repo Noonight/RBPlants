@@ -2,17 +2,13 @@ package com.arkhipov.ayur.rbplants.di
 
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.authorization.AuthActivity
-import com.arkhipov.ayur.rbplants.authorization.AuthPresenter
 import com.arkhipov.ayur.rbplants.authorization.sign_in.SignInFragment
-import com.arkhipov.ayur.rbplants.authorization.sign_in.SignInPresenter
 import com.arkhipov.ayur.rbplants.authorization.sign_up.SignUpFragment
-import com.arkhipov.ayur.rbplants.authorization.sign_up.SignUpPresenter
-import com.arkhipov.ayur.rbplants.di.modules.AppModule
 import com.arkhipov.ayur.rbplants.di.modules.ContextModule
 import com.arkhipov.ayur.rbplants.di.modules.FirebaseModule
 import com.arkhipov.ayur.rbplants.di.modules.RealmHelperModule
 import com.arkhipov.ayur.rbplants.main.MainActivity
-import com.arkhipov.ayur.rbplants.utils.Dialog
+import com.arkhipov.ayur.rbplants.utils.DialogUtils
 import dagger.Component
 import javax.inject.Singleton
 
@@ -31,7 +27,7 @@ interface AppComponent
 
     fun inject(mainActivity: MainActivity)
 
-    fun inject(dialog: Dialog)
+    fun inject(dialog: DialogUtils)
 }
 
 /*@Singleton

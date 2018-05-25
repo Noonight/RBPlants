@@ -1,15 +1,11 @@
 package com.arkhipov.ayur.rbplants.utils
 
-import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
-import android.os.Bundle
 import android.support.v7.app.AlertDialog
-import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
-import javax.inject.Inject
 
-class Dialog(private val context: Context)
+class DialogUtils(private val context: Context)
 {
     var positivePressed: OnPositivePressed? = null
     var negativePressed: OnNegativePressed? = null
@@ -34,7 +30,7 @@ class Dialog(private val context: Context)
             }).create()
     }
 
-    /*fun onCreateDialog(savedInstanceState: Bundle?): Dialog
+    /*fun onCreateDialog(savedInstanceState: Bundle?): DialogUtils
     {
         val builder = AlertDialog.Builder(App.instance as Context)
         builder.setMessage(R.string.confirm_exit)
@@ -59,6 +55,16 @@ class Dialog(private val context: Context)
     {
         this.positivePressed = positivePressed
         this.negativePressed = negativePressed
+    }
+
+    fun setPositivePressedListener(action: OnPositivePressed)
+    {
+        this.positivePressed = action
+    }
+
+    fun setNegativePressedListener(action: OnNegativePressed)
+    {
+        this.negativePressed = action
     }
 
     interface OnPositivePressed

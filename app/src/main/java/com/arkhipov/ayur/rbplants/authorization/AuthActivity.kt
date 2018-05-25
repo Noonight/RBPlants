@@ -9,7 +9,7 @@ import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.authorization.sign_in.SignInFragment
 import com.arkhipov.ayur.rbplants.base.Log
 import com.arkhipov.ayur.rbplants.main.MainActivity
-import com.arkhipov.ayur.rbplants.utils.Dialog
+import com.arkhipov.ayur.rbplants.utils.DialogUtils
 import com.google.firebase.auth.FirebaseAuth
 import javax.inject.Inject
 
@@ -18,7 +18,7 @@ class AuthActivity : AppCompatActivity(), AuthView
     @Inject
     lateinit var presenter: AuthPresenter
     //@Inject
-    lateinit var dialog: Dialog
+    lateinit var dialog: DialogUtils
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -45,15 +45,24 @@ class AuthActivity : AppCompatActivity(), AuthView
 
     fun initDialog()
     {
-        dialog = Dialog(this)
-        dialog.positivePressed =  object : Dialog.OnPositivePressed
+        dialog = DialogUtils(this)
+        /*dialog.positivePressed =  object : DialogUtils.OnPositivePressed
         {
             override fun onPress()
             {
-                Log.d("Exit Dialog positive pressed")
+                Log.d("Exit DialogUtils positive pressed")
                 finish()
             }
-        }
+        }*/
+        dialog.setPositivePressedListener(action = object : DialogUtils.OnPositivePressed
+        {
+            override fun onPress()
+            {
+                Log.d("Exit DialogUtils positive pressed")
+                finish()
+            }
+
+        })
     }
 
     override fun onStart()

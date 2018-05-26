@@ -20,11 +20,6 @@ interface AuthView : MvpView
      * */
     fun showSignIn()
 
-/*    *//**
-     * Update UI depending on user arg
-     * *//*
-    fun updateUI(user: FirebaseUser)*/
-
     /**
      * Show [MainActivity]
      * */

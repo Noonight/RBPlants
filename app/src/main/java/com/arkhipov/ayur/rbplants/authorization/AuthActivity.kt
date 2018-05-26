@@ -3,11 +3,11 @@ package com.arkhipov.ayur.rbplants.authorization
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.authorization.sign_in.SignInFragment
 import com.arkhipov.ayur.rbplants.base.Log
+import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
 import com.arkhipov.ayur.rbplants.main.MainActivity
 import com.arkhipov.ayur.rbplants.utils.DialogUtils
 import com.google.firebase.auth.FirebaseAuth
@@ -17,8 +17,6 @@ class AuthActivity : AppCompatActivity(), AuthView
 {
     @Inject
     lateinit var presenter: AuthPresenter
-    //@Inject
-    lateinit var dialog: DialogUtils
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -45,24 +43,7 @@ class AuthActivity : AppCompatActivity(), AuthView
 
     fun initDialog()
     {
-        dialog = DialogUtils(this)
-        /*dialog.positivePressed =  object : DialogUtils.OnPositivePressed
-        {
-            override fun onPress()
-            {
-                Log.d("Exit DialogUtils positive pressed")
-                finish()
-            }
-        }*/
-        dialog.setPositivePressedListener(action = object : DialogUtils.OnPositivePressed
-        {
-            override fun onPress()
-            {
-                Log.d("Exit DialogUtils positive pressed")
-                finish()
-            }
 
-        })
     }
 
     override fun onStart()
@@ -113,7 +94,12 @@ class AuthActivity : AppCompatActivity(), AuthView
         Log.d("Back stack entry count = ${supportFragmentManager.backStackEntryCount}")
         if (isBackStackEmpty())
         {
-            dialog.createAlertDialog().show()
+            DialogUtils.createOkCancel(this, R.string.alert, R.string.confirm_exit, ok = {
+                Log.d("Exit DialogUtils positive pressed")
+                finish()
+            }, cancel = {
+                Log.d("Exit Dialog Utils negative pressed")
+            }).show()
         } else
         {
             super.onBackPressed()
@@ -121,7 +107,8 @@ class AuthActivity : AppCompatActivity(), AuthView
         }
     }
 
-    fun isBackStackEmpty(): Boolean {
+    fun isBackStackEmpty(): Boolean
+    {
         if (supportFragmentManager.backStackEntryCount == 0)
         {
             return true

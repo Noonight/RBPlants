@@ -9,4 +9,7 @@
     <string name="confirm_exit">Confirm exit?</string>
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
+    <string name="full_name_signup">Full name</string>
+    <string name="confirm_password_hint">Confirm password</string>
+    <string name="alert">Alert</string>
 </resources>

@@ -5,53 +5,41 @@ import android.content.DialogInterface
 import android.support.v7.app.AlertDialog
 import com.arkhipov.ayur.rbplants.R
 
-class DialogUtils(private val context: Context)
+class DialogUtils()
 {
-    var positivePressed: OnPositivePressed? = null
-    var negativePressed: OnNegativePressed? = null
+    /*var positivePressed: OnPositivePressed? = null
+    var negativePressed: OnNegativePressed? = null*/
 
-    fun createAlertDialog(): AlertDialog
+    companion object
     {
-        return AlertDialog.Builder(context)
-            .setMessage(R.string.confirm_exit)
-            .setPositiveButton(R.string.ok, object : DialogInterface.OnClickListener
-            {
-                override fun onClick(dialog: DialogInterface?, which: Int)
+        inline fun createOkCancel(context: Context, title: CharSequence, message: CharSequence, crossinline ok: ()-> Unit, crossinline cancel: ()-> Unit?): AlertDialog
+        {
+            return AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(R.string.ok, object : DialogInterface.OnClickListener
                 {
-                    positivePressed?.onPress()
-                }
-            })
-            .setNegativeButton(R.string.cancel, object : DialogInterface.OnClickListener
-            {
-                override fun onClick(dialog: DialogInterface?, which: Int)
+                    override fun onClick(dialog: DialogInterface?, which: Int)
+                    {
+                        ok()
+                    }
+                })
+                .setNegativeButton(R.string.cancel, object : DialogInterface.OnClickListener
                 {
-                    negativePressed?.onPress()
-                }
-            }).create()
+                    override fun onClick(dialog: DialogInterface?, which: Int)
+                    {
+                        cancel()
+                    }
+                }).create()
+        }
+
+        inline fun createOkCancel(context: Context, title: Int, message: Int, crossinline ok: ()-> Unit, crossinline cancel: ()-> Unit?): AlertDialog
+        {
+            return createOkCancel(context, context.resources.getString(title), context.resources.getString(message), ok, cancel)
+        }
     }
 
-    /*fun onCreateDialog(savedInstanceState: Bundle?): DialogUtils
-    {
-        val builder = AlertDialog.Builder(App.instance as Context)
-        builder.setMessage(R.string.confirm_exit)
-            .setPositiveButton(R.string.ok, object : DialogInterface.OnClickListener
-            {
-                override fun onClick(dialog: DialogInterface?, which: Int)
-                {
-                    positivePressed?.onPress()
-                }
-            })
-            .setNegativeButton(R.string.cancel, object : DialogInterface.OnClickListener
-            {
-                override fun onClick(dialog: DialogInterface?, which: Int)
-                {
-                    negativePressed?.onPress()
-                }
-            })
-        return builder.create()
-    }*/
-
-    fun initCallbacks(positivePressed: OnPositivePressed, negativePressed: OnNegativePressed)
+    /*fun initCallbacks(positivePressed: OnPositivePressed, negativePressed: OnNegativePressed)
     {
         this.positivePressed = positivePressed
         this.negativePressed = negativePressed
@@ -75,5 +63,5 @@ class DialogUtils(private val context: Context)
     interface OnNegativePressed
     {
         fun onPress()
-    }
+    }*/
 }

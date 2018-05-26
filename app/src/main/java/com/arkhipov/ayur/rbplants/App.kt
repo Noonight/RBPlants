@@ -3,7 +3,7 @@ package com.arkhipov.ayur.rbplants
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationDefaults
+import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationDefaults
 import com.arkhipov.ayur.rbplants.di.AppComponent
 import com.arkhipov.ayur.rbplants.di.DaggerAppComponent
 import com.arkhipov.ayur.rbplants.di.modules.ContextModule
@@ -12,8 +12,11 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings
 import io.realm.Realm
 import javax.inject.Inject
 
-import com.arkhipov.ayur.rbplants.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
-import com.arkhipov.ayur.rbplants.navigation.NavigationIconType
+import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
+import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.DATA
+import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.PROFILE_MENU
+import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.SEARCH
+import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.MenuItems.Companion.BACK
 
 class App : Application()
 {
@@ -62,8 +65,12 @@ class App : Application()
     private fun initNavigation()
     {
         NavigationDefaultsHolder.initDefaults(NavigationDefaults()
-            .navigationIcon(NavigationIconType.BACK, R.drawable.arrow_left)
-            .navigationIcon(NavigationIconType.ACCOUNT, R.drawable.account)
-            .defaultNavigationIconType(NavigationIconType.BACK))
+            .navigationIcon(BACK, R.drawable.arrow_back)
+            //.navigationIcon(NavigationIconType.ACCOUNT, R.drawable.account)
+            .navigationItem(SEARCH, R.string.nav_item_search, R.drawable.search, R.color.accent)
+            .navigationItem(DATA, R.string.nav_item_data, R.drawable.like_flower, R.color.primary)
+            .navigationItem(PROFILE_MENU, R.string.nav_item_profile_menu, R.drawable.profile, R.color.secondary_text)
+            .defaultBottomNavigationItem(SEARCH)
+            .defaultNavigationIconType(BACK))
     }
 }

@@ -7,16 +7,20 @@ class SnackbarUtils
 {
     companion object
     {
-        fun create(view: View, message: CharSequence, btnMessage: CharSequence, func: (View)-> Unit): Snackbar
+        fun createAction(view: View, message: CharSequence, btnMessage: CharSequence, func: (View)-> Unit): Snackbar
         {
             return Snackbar.make(view, message, Snackbar.LENGTH_INDEFINITE)
                 .setAction(btnMessage, View.OnClickListener(func))
         }
 
-        fun create(view: View, message: Int, btnMessage: Int, func: (View) -> Unit): Snackbar
+        fun createAction(view: View, message: Int, btnMessage: Int, func: (View) -> Unit): Snackbar
         {
-            return create(view, view.resources.getString(message), view.resources.getString(btnMessage), func)
+            return createAction(view, view.resources.getString(message), view.resources.getString(btnMessage), func)
         }
+
+        fun create(view: View, message: CharSequence) = Snackbar.make(view, message, Snackbar.LENGTH_LONG)
+
+        fun create(view: View, message: Int) = create(view, view.resources.getString(message))
     }
 
     interface Action {

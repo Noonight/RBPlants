@@ -38,7 +38,7 @@ class AuthActivity : AppCompatActivity(), AuthView
 
     fun initViews()
     {
-        FirebaseAuth.getInstance().signOut()
+        //FirebaseAuth.getInstance().signOut()
     }
 
     fun initDialog()

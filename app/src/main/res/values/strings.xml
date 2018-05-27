@@ -16,4 +16,6 @@
     <string name="nav_item_search">Search</string>
     <string name="nav_item_data">Data</string>
     <string name="nav_item_profile_menu">Profile\'s menu</string>
+    <string name="data">Data</string>
+    <string name="menu_profile">Profile\'s menu</string>
 </resources>

@@ -8,6 +8,8 @@ import com.arkhipov.ayur.rbplants.ui.authorization.AuthActivity
 import com.arkhipov.ayur.rbplants.ui.authorization.sign_in.SignInFragment
 import com.arkhipov.ayur.rbplants.ui.authorization.sign_up.SignUpFragment
 import com.arkhipov.ayur.rbplants.ui.main.MainActivity
+import com.arkhipov.ayur.rbplants.ui.main.data.DataFragment
+import com.arkhipov.ayur.rbplants.ui.main.menu.MenuProfileFragment
 import com.arkhipov.ayur.rbplants.ui.main.search.SearchFragment
 import com.arkhipov.ayur.rbplants.utils.DialogUtils
 import dagger.Component
@@ -29,6 +31,11 @@ interface AppComponent
     fun inject(mainActivity: MainActivity)
 
     fun inject(searchFragment: SearchFragment)
+
+    fun inject(dataFragment: DataFragment)
+
+    fun inject(menuProfileFragment: MenuProfileFragment)
+
 }
 
 /*@Singleton

@@ -8,4 +8,13 @@ interface MainView : MvpView
      * Show [SearchFragment]
      * */
     fun showSearch()
+
+    /**
+     * Show [DataFragment]
+     * */
+    fun showData()
+
+    /**
+     * Show [ProfileMenuFragment]*/
+    fun showProfileMenu()
 }

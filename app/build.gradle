@@ -85,6 +85,8 @@ dependencies {
     //implementation project(':fragmentnavigations')
 
     //implementation 'commons-validator:commons-validator:1.4.1'
+
+    compile 'com.github.pchmn:MaterialChipsInput:1.0.8'
 }
 
 apply plugin: 'com.google.gms.google-services'

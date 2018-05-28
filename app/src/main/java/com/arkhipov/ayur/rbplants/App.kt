@@ -17,6 +17,7 @@ import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Compani
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.PROFILE_MENU
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.SEARCH
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.MenuItems.Companion.BACK
+import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.MenuItems.Companion.NAV_MENU
 
 class App : Application()
 {
@@ -66,7 +67,7 @@ class App : Application()
     {
         NavigationDefaultsHolder.initDefaults(NavigationDefaults()
             .navigationIcon(BACK, R.drawable.arrow_back)
-            //.navigationIcon(NavigationIconType.ACCOUNT, R.drawable.account)
+            .navigationIcon(NAV_MENU, R.drawable.more_vert)
             .navigationItem(SEARCH, R.string.nav_item_search, R.drawable.search, R.color.accent)
             .navigationItem(DATA, R.string.nav_item_data, R.drawable.like_flower, R.color.primary)
             .navigationItem(PROFILE_MENU, R.string.nav_item_profile_menu, R.drawable.profile, R.color.secondary_text)

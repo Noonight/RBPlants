@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.SearchView
+    <!--<android.support.v7.widget.SearchView
         android:id="@+id/sv_tag_search"
         android:layout_margin="@dimen/activity_min_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:iconifiedByDefault="true" />
+        app:iconifiedByDefault="true" />-->
 
-    <TextView
+    <!--<TextView
         android:id="@+id/tv_main_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,15 +20,17 @@
         android:gravity="center"
         android:text="fragment search"
         android:textColor="@color/colorPrimary"
-        android:textSize="45sp" />
+        android:textSize="45sp" />-->
 
-    <android.support.design.widget.FloatingActionButton
+    <!--<android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_camera_search"
         style="@style/Widget.AppCompat.Button.Colored"
         android:src="@drawable/camera"
         android:layout_margin="@dimen/activity_max_margin"
         android:layout_gravity="bottom|end"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" />-->
+
+
 
 </FrameLayout>

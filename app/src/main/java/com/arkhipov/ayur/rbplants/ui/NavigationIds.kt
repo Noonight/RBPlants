@@ -9,7 +9,7 @@ class NavigationIds
             companion object
             {
                 val BACK = 10
-//                val NAV_MENU = 11
+                val NAV_MENU = 11
 //                val ACCOUNT = 12
             }
         }

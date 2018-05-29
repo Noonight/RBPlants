@@ -6,11 +6,10 @@ import android.support.v7.app.AppCompatActivity
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.ui.authorization.sign_in.SignInFragment
-import com.arkhipov.ayur.rbplants.utils.Log
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
+import com.arkhipov.ayur.rbplants.any.utils.Log
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
 import com.arkhipov.ayur.rbplants.ui.main.MainActivity
-import com.arkhipov.ayur.rbplants.utils.DialogUtils
-import com.google.firebase.auth.FirebaseAuth
+import com.arkhipov.ayur.rbplants.any.utils.DialogUtils
 import javax.inject.Inject
 
 class AuthActivity : AppCompatActivity(), AuthView

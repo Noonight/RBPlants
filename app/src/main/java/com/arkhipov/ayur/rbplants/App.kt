@@ -3,7 +3,7 @@ package com.arkhipov.ayur.rbplants
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationDefaults
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationDefaults
 import com.arkhipov.ayur.rbplants.di.AppComponent
 import com.arkhipov.ayur.rbplants.di.DaggerAppComponent
 import com.arkhipov.ayur.rbplants.di.modules.ContextModule
@@ -12,7 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings
 import io.realm.Realm
 import javax.inject.Inject
 
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationDefaults.NavigationDefaultsHolder
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.DATA
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.PROFILE_MENU
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.SEARCH

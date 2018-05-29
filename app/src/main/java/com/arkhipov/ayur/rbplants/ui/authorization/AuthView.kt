@@ -1,7 +1,6 @@
 package com.arkhipov.ayur.rbplants.ui.authorization
 
-import com.arkhipov.ayur.rbplants.base.mvp.MvpView
-import com.google.firebase.auth.FirebaseUser
+import com.arkhipov.ayur.rbplants.any.base.base_mvp.MvpView
 
 interface AuthView : MvpView
 {

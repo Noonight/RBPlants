@@ -1,6 +1,6 @@
 package com.arkhipov.ayur.rbplants.ui.main
 
-import com.arkhipov.ayur.rbplants.base.mvp.MvpView
+import com.arkhipov.ayur.rbplants.any.base.base_mvp.MvpView
 
 interface MainView : MvpView
 {
@@ -15,6 +15,6 @@ interface MainView : MvpView
     fun showData()
 
     /**
-     * Show [ProfileMenuFragment]*/
-    fun showProfileMenu()
+     * Show [ProfileFragment]*/
+    fun showProfile()
 }

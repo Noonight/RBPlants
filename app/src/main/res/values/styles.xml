@@ -13,6 +13,10 @@
         <item name="android:textSize">@dimen/default_text_size</item>
     </style>
 
+    <style name="TextViewProfile" parent="AppTheme">
+        <item name="android:padding">8dp</item>
+    </style>
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

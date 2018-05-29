@@ -1,6 +1,6 @@
 package com.arkhipov.ayur.rbplants.ui.authorization
 
-import com.arkhipov.ayur.rbplants.base.mvp.MvpPresenter
+import com.arkhipov.ayur.rbplants.any.base.base_mvp.MvpPresenter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import javax.inject.Inject

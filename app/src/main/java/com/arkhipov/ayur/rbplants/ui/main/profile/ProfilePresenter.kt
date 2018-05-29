@@ -1,11 +1,13 @@
-package com.arkhipov.ayur.rbplants.ui.authorization.sign_up
+package com.arkhipov.ayur.rbplants.ui.main.profile
 
 import com.arkhipov.ayur.rbplants.any.base.base_mvp.MvpPresenter
 import javax.inject.Inject
 
-class SignUpPresenter @Inject constructor(
+class ProfilePresenter @Inject constructor(
 
-) : MvpPresenter<SignUpView>() {
+): MvpPresenter<ProfileView>()
+{
+
 
     override fun updateView()
     {

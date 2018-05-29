@@ -5,15 +5,15 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationDefaults
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationDefaults
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.DATA
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.PROFILE_MENU
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Companion.SEARCH
 import com.arkhipov.ayur.rbplants.ui.main.data.DataFragment
-import com.arkhipov.ayur.rbplants.ui.main.menu.MenuProfileFragment
 import com.arkhipov.ayur.rbplants.ui.main.search.SearchFragment
-import com.arkhipov.ayur.rbplants.utils.DialogUtils
-import com.arkhipov.ayur.rbplants.utils.Log
+import com.arkhipov.ayur.rbplants.any.utils.DialogUtils
+import com.arkhipov.ayur.rbplants.any.utils.Log
+import com.arkhipov.ayur.rbplants.ui.main.profile.ProfileFragment
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import javax.inject.Inject
 
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity(), MainView
                 /**
                  * [PROFILE_MENU]
                  * */
-                    2 -> if (!wasSelected) showProfileMenu()
+                    2 -> if (!wasSelected) showProfile()
                 }
                 return true
             }
@@ -101,12 +101,12 @@ class MainActivity : AppCompatActivity(), MainView
             .commit()
     }
 
-    override fun showProfileMenu()
+    override fun showProfile()
     {
         Log.d("Show menu profile fragment")
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.main_fragment_container, MenuProfileFragment())
+            .replace(R.id.main_fragment_container, ProfileFragment())
             .commit()
     }
 

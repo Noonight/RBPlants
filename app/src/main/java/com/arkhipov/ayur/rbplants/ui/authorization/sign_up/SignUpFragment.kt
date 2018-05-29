@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.ui.authorization.AuthActivity
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.AutoLayoutNavigationBuilder
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationBuilder
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationFragment
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.AutoLayoutNavigationBuilder
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationBuilder
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragment
 import javax.inject.Inject
 
 class SignUpFragment : NavigationFragment(), SignUpView {

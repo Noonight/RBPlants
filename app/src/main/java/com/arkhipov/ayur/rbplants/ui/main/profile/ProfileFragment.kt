@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.rbplants.ui.main.search
+package com.arkhipov.ayur.rbplants.ui.main.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,18 +11,18 @@ import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationBuilder
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragment
 import javax.inject.Inject
 
-class SearchFragment : NavigationFragment(), SearchView
+class ProfileFragment : NavigationFragment(), ProfileView
 {
     @Inject
-    lateinit var presenter: SearchPresenter
+    lateinit var presenter: ProfilePresenter
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>>
     {
-        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_search)
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_profile)
             .includeToolbar()
-            .includeBottomNavigation()
-            .toolbarTitleRes(R.string.search)
-            .toolbarNavigationIcon(-1)
+            //.includeBottomNavigation()
+            .toolbarTitleRes(R.string.profile)
+            //.toolbarNavigationIcon()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
@@ -40,6 +40,7 @@ class SearchFragment : NavigationFragment(), SearchView
 
     fun initViews()
     {
-        //SnackbarUtils.create(view!!, "Hello! searchFragment").show()
+        // SnackbarUtils.create(view!!, "Hello! searchFragment").show()
     }
+
 }

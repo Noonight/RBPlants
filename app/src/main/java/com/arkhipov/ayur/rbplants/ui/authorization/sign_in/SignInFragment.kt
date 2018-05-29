@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.AutoLayoutNavigationBuilder
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationBuilder
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationFragment
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.AutoLayoutNavigationBuilder
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationBuilder
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragment
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.ui.authorization.AuthActivity
@@ -20,16 +20,6 @@ class SignInFragment : NavigationFragment(), SignInView
 {
     @Inject
     lateinit var presenter: SignInPresenter
-
-    companion object
-    {
-        fun newInstance(bundle: Bundle): SignInFragment
-        {
-            val mInstance = SignInFragment()
-            mInstance.arguments = bundle
-            return mInstance
-        }
-    }
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>>
     {

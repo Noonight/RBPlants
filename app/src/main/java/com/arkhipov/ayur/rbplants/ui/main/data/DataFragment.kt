@@ -6,28 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.AutoLayoutNavigationBuilder
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationBuilder
-import com.arkhipov.ayur.rbplants.base.fragmentnavigations.NavigationFragment
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.AutoLayoutNavigationBuilder
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationBuilder
+import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragment
 import com.arkhipov.ayur.rbplants.ui.main.search.SearchFragment
-import com.arkhipov.ayur.rbplants.ui.main.search.SearchPresenter
-import com.arkhipov.ayur.rbplants.utils.SnackbarUtils
 import javax.inject.Inject
 
 class DataFragment : NavigationFragment(), DataView
 {
     @Inject
     lateinit var presenter: DataPresenter
-
-    companion object
-    {
-        fun newInstance(bundle: Bundle): SearchFragment
-        {
-            val mInstance = SearchFragment()
-            mInstance.arguments = bundle
-            return mInstance
-        }
-    }
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>>
     {

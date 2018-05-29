@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@color/primary"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_avatar_profile"
+                    android:src="@drawable/profile"
+                    android:layout_width="180dp"
+                    android:paddingTop="32dp"
+                    android:layout_height="180dp" />
+
+                <TextView
+                    android:id="@+id/tv_full_name_profile"
+                    android:gravity="center"
+                    style="@style/TextViewProfile"
+                    android:text="Full name tmp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_min_margin"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewProfile"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@string/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:id="@+id/tv_email_profile"
+                        style="@style/TextViewProfile"
+                        android:layout_gravity="center"
+                        android:text="email tmp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TextViewProfile"
+                        android:layout_gravity="center"
+                        android:text="@string/score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:id="@+id/tv_score_profile"
+                        style="@style/TextViewProfile"
+                        android:layout_gravity="center"
+                        android:text="score tmp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_marginEnd="36dp"
+                android:layout_marginStart="36dp"
+                android:columnCount="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_my_images_profile"
+                        android:src="@drawable/ic_image"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:foregroundGravity="center"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        style="@style/TextViewProfile"
+                        android:text="@string/my_gallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_my_groups_profile"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_group"
+                        android:layout_gravity="center"
+                        android:foregroundGravity="center"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        style="@style/TextViewProfile"
+                        android:text="@string/my_groups"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_my_plants_profile"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_flower"
+                        android:foregroundGravity="center"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        style="@style/TextViewProfile"
+                        android:text="@string/my_plants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_sign_out_profile"
+                        android:src="@drawable/exit"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:foregroundGravity="center"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        style="@style/TextViewProfile"
+                        android:text="@string/sign_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_edit_profile"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:src="@drawable/edit"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:foregroundGravity="center"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        style="@style/TextViewProfile"
+                        android:text="@string/edit_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </GridLayout>
+
+            <!--<LinearLayout
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_sign_out_profile"
+                    android:text="@string/sign_out"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btn_edit_profile"
+                    android:text="@string/edit"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>-->
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</FrameLayout>

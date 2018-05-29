@@ -5,36 +5,28 @@ import android.content.DialogInterface
 import android.support.v7.app.AlertDialog
 import com.arkhipov.ayur.rbplants.R
 
-class DialogUtils()
-{
+class DialogUtils() {
     /*var positivePressed: OnPositivePressed? = null
     var negativePressed: OnNegativePressed? = null*/
 
-    companion object
-    {
-        inline fun createOkCancel(context: Context, title: CharSequence, message: CharSequence, crossinline ok: ()-> Unit, crossinline cancel: ()-> Unit?): AlertDialog
-        {
+    companion object {
+        inline fun createOkCancel(context: Context, title: CharSequence, message: CharSequence, crossinline ok: () -> Unit, crossinline cancel: () -> Unit?): AlertDialog {
             return AlertDialog.Builder(context)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(R.string.ok, object : DialogInterface.OnClickListener
-                {
-                    override fun onClick(dialog: DialogInterface?, which: Int)
-                    {
+                .setPositiveButton(R.string.ok, object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
                         ok()
                     }
                 })
-                .setNegativeButton(R.string.cancel, object : DialogInterface.OnClickListener
-                {
-                    override fun onClick(dialog: DialogInterface?, which: Int)
-                    {
+                .setNegativeButton(R.string.cancel, object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
                         cancel()
                     }
                 }).create()
         }
 
-        inline fun createOkCancel(context: Context, title: Int, message: Int, crossinline ok: ()-> Unit, crossinline cancel: ()-> Unit?): AlertDialog
-        {
+        inline fun createOkCancel(context: Context, title: Int, message: Int, crossinline ok: () -> Unit, crossinline cancel: () -> Unit?): AlertDialog {
             return createOkCancel(context, context.resources.getString(title), context.resources.getString(message), ok, cancel)
         }
     }

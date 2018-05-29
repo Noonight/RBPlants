@@ -16,21 +16,18 @@ import com.arkhipov.ayur.rbplants.ui.authorization.sign_up.SignUpFragment
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import javax.inject.Inject
 
-class SignInFragment : NavigationFragment(), SignInView
-{
+class SignInFragment : NavigationFragment(), SignInView {
     @Inject
     lateinit var presenter: SignInPresenter
 
-    override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>>
-    {
+    override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_sign_in)
             .includeToolbar()
             .toolbarTitleRes(R.string.sign_in)
             .toolbarNavigationIcon(-1)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
-    {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         //val view = inflater.inflate(R.layout.fragment_sign_in, container, false)
         App[activity!!].component.inject(this)
         presenter.attachView(this)
@@ -38,15 +35,13 @@ class SignInFragment : NavigationFragment(), SignInView
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
     }
 
     @SuppressLint("ResourceAsColor")
-    fun initViews()
-    {
+    fun initViews() {
         btn_sign_in_signin.setOnClickListener {
             presenter.onSignInButtonPressed(et_email_signin.text.toString(), et_password_signin.text.toString())
             //presenter.signInEmailPassword(et_email_signin.text.toString(), et_password_signin.text.toString())
@@ -57,8 +52,7 @@ class SignInFragment : NavigationFragment(), SignInView
         }
     }
 
-    override fun showSignUp()
-    {
+    override fun showSignUp() {
         activity!!.supportFragmentManager
             .beginTransaction()
             .replace(R.id.auth_fragment_container, SignUpFragment(), SignUpFragment::javaClass.name)
@@ -66,18 +60,15 @@ class SignInFragment : NavigationFragment(), SignInView
             .commit()
     }
 
-    override fun showMain()
-    {
+    override fun showMain() {
         (activity!! as AuthActivity).showMain()
     }
 
-    override fun showInvalidInputData()
-    {
+    override fun showInvalidInputData() {
         Toast.makeText(activity, "Invalid input data!!!", Toast.LENGTH_LONG).show()
     }
 
-    override fun showToast(message: String)
-    {
+    override fun showToast(message: String) {
         Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
     }
 

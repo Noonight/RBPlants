@@ -11,7 +11,8 @@ import static java.util.Arrays.asList;
 public final class NavigationDefaults {
     private static final View.OnClickListener DUMMY_NAV_ICON_LISTENER = new View.OnClickListener() {
         @Override
-        public void onClick(View view) {}
+        public void onClick(View view) {
+        }
     };
 
     private NavigationItems navigationItems = new NavigationItems();

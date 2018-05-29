@@ -11,13 +11,11 @@ import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationBuilder
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragment
 import javax.inject.Inject
 
-class SearchFragment : NavigationFragment(), SearchView
-{
+class SearchFragment : NavigationFragment(), SearchView {
     @Inject
     lateinit var presenter: SearchPresenter
 
-    override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>>
-    {
+    override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_search)
             .includeToolbar()
             .includeBottomNavigation()
@@ -25,21 +23,18 @@ class SearchFragment : NavigationFragment(), SearchView
             .toolbarNavigationIcon(-1)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
-    {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         App[activity!!].component.inject(this)
         presenter.attachView(this)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
     }
 
-    fun initViews()
-    {
+    fun initViews() {
         //SnackbarUtils.create(view!!, "Hello! searchFragment").show()
     }
 }

@@ -19,8 +19,7 @@ import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.BottomItems.Compani
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.MenuItems.Companion.BACK
 import com.arkhipov.ayur.rbplants.ui.NavigationIds.Companion.MenuItems.Companion.NAV_MENU
 
-class App : Application()
-{
+class App : Application() {
 
     @Inject
     lateinit var context: Context
@@ -30,16 +29,14 @@ class App : Application()
 
     lateinit var component: AppComponent
 
-    companion object
-    {
+    companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var instance: App
 
         operator fun get(context: Context) = context.applicationContext as App
     }
 
-    override fun onCreate()
-    {
+    override fun onCreate() {
         instance = this
         super.onCreate()
 
@@ -63,8 +60,7 @@ class App : Application()
     /**
      * Initailization librari config for navigation menu
      * */
-    private fun initNavigation()
-    {
+    private fun initNavigation() {
         NavigationDefaultsHolder.initDefaults(NavigationDefaults()
             .navigationIcon(BACK, R.drawable.arrow_back)
             .navigationIcon(NAV_MENU, R.drawable.more_vert)

@@ -16,8 +16,8 @@ public abstract class MvpPresenter<V extends MvpView> {
     }
 
     /*
-    * use when view attached
-    * */
+     * use when view attached
+     * */
     public abstract void updateView();
 
     public final boolean viewIsAttached() {

@@ -44,8 +44,8 @@ public final class NavigationLayoutFactory implements LayoutFactory {
             AHBottomNavigation bottomNavigation = new AHBottomNavigation(parent.getContext());
             bottomNavigation.setId(R.id.bottomNavigation);
             parent.addView(
-                    bottomNavigation,
-                    new LinearLayout.LayoutParams(MATCH_PARENT, (int) AndroidUtils.dp(parent.getContext(), 56)));
+                bottomNavigation,
+                new LinearLayout.LayoutParams(MATCH_PARENT, (int) AndroidUtils.dp(parent.getContext(), 56)));
         }
 
         return parent;

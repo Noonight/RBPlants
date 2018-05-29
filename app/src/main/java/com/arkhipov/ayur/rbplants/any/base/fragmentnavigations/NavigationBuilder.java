@@ -58,7 +58,7 @@ public abstract class NavigationBuilder<T extends NavigationBuilder<T>> {
 
     public T toolbarNavigationIcon(int toolbarNavigationIcon) {
         if (!navigationDefaults.navigationIcons().contains(toolbarNavigationIcon) &&
-                toolbarNavigationIcon != NO_NAV_ICON) {
+            toolbarNavigationIcon != NO_NAV_ICON) {
             throw new IllegalArgumentException("There is no navigation icon for type: " + toolbarNavigationIcon);
         }
 

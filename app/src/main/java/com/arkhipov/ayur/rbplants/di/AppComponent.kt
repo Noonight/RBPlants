@@ -10,6 +10,11 @@ import com.arkhipov.ayur.rbplants.ui.authorization.sign_up.SignUpFragment
 import com.arkhipov.ayur.rbplants.ui.main.MainActivity
 import com.arkhipov.ayur.rbplants.ui.main.data.DataFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.ProfileFragment
+import com.arkhipov.ayur.rbplants.ui.main.profile.edit.EditProfileFragment
+import com.arkhipov.ayur.rbplants.ui.main.profile.my_groups.MyGroupsFragment
+import com.arkhipov.ayur.rbplants.ui.main.profile.my_groups.MyPlantsFragment
+import com.arkhipov.ayur.rbplants.ui.main.profile.my_images.MyImagesFragment
+import com.arkhipov.ayur.rbplants.ui.main.profile.my_images.MyImagesPresenter
 import com.arkhipov.ayur.rbplants.ui.main.search.SearchFragment
 import dagger.Component
 import javax.inject.Singleton
@@ -17,8 +22,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [(FirebaseModule::class), (ContextModule::class), (RealmHelperModule::class)])
-interface AppComponent
-{
+interface AppComponent {
     fun inject(app: App)
 
     fun inject(authActivity: AuthActivity)
@@ -34,6 +38,14 @@ interface AppComponent
     fun inject(dataFragment: DataFragment)
 
     fun inject(profile: ProfileFragment)
+
+    fun inject(editProfileFragment: EditProfileFragment)
+
+    fun inject(myImagesFragment: MyImagesFragment)
+
+    fun inject(myGroupsFragment: MyGroupsFragment)
+
+    fun inject(myPlantsFragment: MyPlantsFragment)
 }
 
 /*@Singleton

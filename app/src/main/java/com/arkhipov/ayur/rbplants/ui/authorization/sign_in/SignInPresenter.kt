@@ -9,23 +9,18 @@ import javax.inject.Inject
 
 class SignInPresenter @Inject constructor(
     private val firebaseAuth: FirebaseAuth
-) : MvpPresenter<SignInView>()
-{
-    override fun updateView()
-    {
+) : MvpPresenter<SignInView>() {
+    override fun updateView() {
 
     }
 
-    fun signInEmailPassword(email: String, password: String)
-    {
+    fun signInEmailPassword(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
-                if (it.isSuccessful)
-                {
+                if (it.isSuccessful) {
                     view.showMain()
                     Log.d(firebaseAuth.currentUser!!.email)
-                } else
-                {
+                } else {
                     Log.w(it.exception)
                 }
             }
@@ -34,13 +29,10 @@ class SignInPresenter @Inject constructor(
             }
     }
 
-    fun onSignInButtonPressed(email: String, password: String)
-    {
-        if (!InputFieldUtils.isEmpty(email) && !InputFieldUtils.isEmpty(password))
-        {
+    fun onSignInButtonPressed(email: String, password: String) {
+        if (!InputFieldUtils.isEmpty(email) && !InputFieldUtils.isEmpty(password)) {
             signInEmailPassword(email, password)
-        } else
-        {
+        } else {
             view.showInvalidInputData()
         }
         /*if (!InputFieldUtils.isEmailValid(email) && !InputFieldUtils.isPasswordValid(password))

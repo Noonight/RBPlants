@@ -5,12 +5,10 @@ import javax.inject.Inject
 
 class MainPresenter @Inject constructor(
 
-) : MvpPresenter<MainView>()
-{
+) : MvpPresenter<MainView>() {
 
 
-    override fun updateView()
-    {
+    override fun updateView() {
 
     }
 

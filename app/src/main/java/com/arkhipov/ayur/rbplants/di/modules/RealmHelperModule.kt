@@ -8,8 +8,7 @@ import io.realm.RealmConfiguration
 import javax.inject.Singleton
 
 @Module
-class RealmHelperModule
-{
+class RealmHelperModule {
     @Provides
     @Singleton
     fun provideRealm(realmConfiguration: RealmConfiguration): Realm = Realm.getInstance(realmConfiguration)
@@ -17,8 +16,8 @@ class RealmHelperModule
     @Provides
     @Singleton
     fun provideRealmConfiguration(): RealmConfiguration = RealmConfiguration.Builder()
-            .modules(AppRealmModule())
-            .name("rbplants.realm")
-            .schemaVersion(1)
-            .build()
+        .modules(AppRealmModule())
+        .name("rbplants.realm")
+        .schemaVersion(1)
+        .build()
 }

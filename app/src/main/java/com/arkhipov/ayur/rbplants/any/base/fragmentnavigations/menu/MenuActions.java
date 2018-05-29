@@ -22,7 +22,8 @@ public final class MenuActions implements PopupMenu.OnMenuItemClickListener {
     public static final class Builder {
         private final SparseArray<MenuAction> actions = new SparseArray<>();
 
-        public Builder() {}
+        public Builder() {
+        }
 
         public Builder(MenuActionItem... items) {
             for (MenuActionItem item : items) {

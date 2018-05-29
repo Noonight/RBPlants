@@ -5,10 +5,8 @@ import javax.inject.Inject
 
 class DataPresenter @Inject constructor(
 
-) : MvpPresenter<DataView>()
-{
-    override fun updateView()
-    {
+) : MvpPresenter<DataView>() {
+    override fun updateView() {
 
     }
 

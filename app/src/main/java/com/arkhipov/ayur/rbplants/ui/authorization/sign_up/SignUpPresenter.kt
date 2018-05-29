@@ -7,8 +7,7 @@ class SignUpPresenter @Inject constructor(
 
 ) : MvpPresenter<SignUpView>() {
 
-    override fun updateView()
-    {
+    override fun updateView() {
 
     }
 }

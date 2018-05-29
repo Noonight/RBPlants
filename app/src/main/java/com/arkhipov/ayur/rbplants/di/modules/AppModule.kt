@@ -19,8 +19,7 @@ import javax.inject.Singleton
  * {@link RealmHelperModule} [RealmHelperModule]
  */
 @Module
-class AppModule(private val app: App)
-{
+class AppModule(private val app: App) {
     @Singleton
     @Provides
     fun provideAppContext(): Context = app

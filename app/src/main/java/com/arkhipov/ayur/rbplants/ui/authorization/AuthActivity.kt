@@ -12,13 +12,11 @@ import com.arkhipov.ayur.rbplants.ui.main.MainActivity
 import com.arkhipov.ayur.rbplants.any.utils.DialogUtils
 import javax.inject.Inject
 
-class AuthActivity : AppCompatActivity(), AuthView
-{
+class AuthActivity : AppCompatActivity(), AuthView {
     @Inject
     lateinit var presenter: AuthPresenter
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
 
@@ -35,38 +33,31 @@ class AuthActivity : AppCompatActivity(), AuthView
         initViews()
     }
 
-    fun initViews()
-    {
+    fun initViews() {
         //FirebaseAuth.getInstance().signOut()
     }
 
-    fun initDialog()
-    {
+    fun initDialog() {
 
     }
 
-    override fun onStart()
-    {
+    override fun onStart() {
         super.onStart()
         checkAuthUser()
     }
 
-    override fun checkAuthUser()
-    {
+    override fun checkAuthUser() {
         Log.d("Check auth user")
-        if (presenter.getCurrentUser() != null)
-        {
+        if (presenter.getCurrentUser() != null) {
             Log.d("User found: ${presenter.getCurrentUser()!!.email}")
             showMain()
-        } else
-        {
+        } else {
             Log.d("Not found authorized user!")
             showSignIn()
         }
     }
 
-    override fun showSignIn()
-    {
+    override fun showSignIn() {
         Log.d("Show SignInFragment")
         supportFragmentManager
             .beginTransaction()
@@ -74,13 +65,11 @@ class AuthActivity : AppCompatActivity(), AuthView
             .commit()
     }
 
-    override fun showSteppersGuide()
-    {
+    override fun showSteppersGuide() {
         Log.d("Show steppers guide")
     }
 
-    override fun showMain()
-    {
+    override fun showMain() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         Log.d("Start MainActivity")
@@ -88,28 +77,23 @@ class AuthActivity : AppCompatActivity(), AuthView
         Log.d("Finish AuthActivity")
     }
 
-    override fun onBackPressed()
-    {
+    override fun onBackPressed() {
         Log.d("Back stack entry count = ${supportFragmentManager.backStackEntryCount}")
-        if (isBackStackEmpty())
-        {
+        if (isBackStackEmpty()) {
             DialogUtils.createOkCancel(this, R.string.alert, R.string.confirm_exit, ok = {
                 Log.d("Exit DialogUtils positive pressed")
                 finish()
             }, cancel = {
                 Log.d("Exit Dialog Utils negative pressed")
             }).show()
-        } else
-        {
+        } else {
             super.onBackPressed()
             Log.d("Navigation item BACK pressed!")
         }
     }
 
-    fun isBackStackEmpty(): Boolean
-    {
-        if (supportFragmentManager.backStackEntryCount == 0)
-        {
+    fun isBackStackEmpty(): Boolean {
+        if (supportFragmentManager.backStackEntryCount == 0) {
             return true
         }
         return false

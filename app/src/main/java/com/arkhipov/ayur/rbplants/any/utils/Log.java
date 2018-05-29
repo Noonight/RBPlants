@@ -8,7 +8,7 @@ public final class Log {
     private final static String mock = "\t\t\tDEBUGG";
 
     public static void w(Exception e) {
-        android.util.Log.w(getLocation(),mock, e);
+        android.util.Log.w(getLocation(), mock, e);
     }
 
     public static void l() {
@@ -33,13 +33,11 @@ public final class Log {
                         Class<?> clazz = Class.forName(trace.getClassName());
                         return "[" + getClassName(clazz) + ":" + trace.getMethodName() + ":" + trace.getLineNumber() + "]: ";
                     }
-                }
-                else if (trace.getClassName().startsWith(className)) {
+                } else if (trace.getClassName().startsWith(className)) {
                     found = true;
                     continue;
                 }
-            }
-            catch (ClassNotFoundException e) {
+            } catch (ClassNotFoundException e) {
             }
         }
 

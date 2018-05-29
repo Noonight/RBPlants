@@ -12,13 +12,11 @@ import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragmen
 import com.arkhipov.ayur.rbplants.ui.main.search.SearchFragment
 import javax.inject.Inject
 
-class DataFragment : NavigationFragment(), DataView
-{
+class DataFragment : NavigationFragment(), DataView {
     @Inject
     lateinit var presenter: DataPresenter
 
-    override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>>
-    {
+    override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_data)
             .includeToolbar()
             .includeBottomNavigation()
@@ -26,21 +24,18 @@ class DataFragment : NavigationFragment(), DataView
             .toolbarNavigationIcon(-1)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
-    {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         App[activity!!].component.inject(this)
         presenter.attachView(this)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
     }
 
-    fun initViews()
-    {
+    fun initViews() {
         //SnackbarUtils.create(view!!, "Hello! searchFragment").show()
     }
 

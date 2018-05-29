@@ -17,14 +17,12 @@ import com.arkhipov.ayur.rbplants.ui.main.profile.ProfileFragment
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), MainView
-{
+class MainActivity : AppCompatActivity(), MainView {
     @Inject
     lateinit var presenter: MainPresenter
     private lateinit var bottomNavigation: AHBottomNavigation
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -41,15 +39,13 @@ class MainActivity : AppCompatActivity(), MainView
         initViews()
     }
 
-    private fun initViews()
-    {
+    private fun initViews() {
         showSearch()
 
     }
 
     @SuppressLint("ResourceAsColor")
-    fun bottomNavigation()
-    {
+    fun bottomNavigation() {
         bottomNavigation = findViewById(R.id.main_bottom_navigation)
         bottomNavigation.addItems(
             NavigationDefaults.NavigationDefaultsHolder
@@ -57,13 +53,10 @@ class MainActivity : AppCompatActivity(), MainView
                 .navigationItems()
                 .bottomNavigationItems())
         bottomNavigation.accentColor = resources.getColor(R.color.accent)
-        bottomNavigation.setOnTabSelectedListener(object : AHBottomNavigation.OnTabSelectedListener
-        {
-            override fun onTabSelected(position: Int, wasSelected: Boolean): Boolean
-            {
+        bottomNavigation.setOnTabSelectedListener(object : AHBottomNavigation.OnTabSelectedListener {
+            override fun onTabSelected(position: Int, wasSelected: Boolean): Boolean {
                 Log.d(" Bottom navigation pressed: position = $position and wasSelected = $wasSelected")
-                when (position)
-                {
+                when (position) {
                 /**
                  * [SEARCH]
                  * */
@@ -83,8 +76,7 @@ class MainActivity : AppCompatActivity(), MainView
         })
     }
 
-    override fun showSearch()
-    {
+    override fun showSearch() {
         Log.d("Show search fragment")
         supportFragmentManager
             .beginTransaction()
@@ -92,8 +84,7 @@ class MainActivity : AppCompatActivity(), MainView
             .commit()
     }
 
-    override fun showData()
-    {
+    override fun showData() {
         Log.d("Show data fragment")
         supportFragmentManager
             .beginTransaction()
@@ -101,8 +92,7 @@ class MainActivity : AppCompatActivity(), MainView
             .commit()
     }
 
-    override fun showProfile()
-    {
+    override fun showProfile() {
         Log.d("Show menu profile fragment")
         supportFragmentManager
             .beginTransaction()
@@ -110,28 +100,23 @@ class MainActivity : AppCompatActivity(), MainView
             .commit()
     }
 
-    override fun onBackPressed()
-    {
+    override fun onBackPressed() {
         Log.d("Back stack entry count = ${supportFragmentManager.backStackEntryCount}")
-        if (isBackStackEmpty())
-        {
+        if (isBackStackEmpty()) {
             DialogUtils.createOkCancel(this, R.string.alert, R.string.confirm_exit, ok = {
                 Log.d("Exit DialogUtils positive pressed")
                 finish()
             }, cancel = {
                 Log.d("Exit Dialog Utils negative pressed")
             }).show()
-        } else
-        {
+        } else {
             super.onBackPressed()
             Log.d("Navigation item BACK pressed!")
         }
     }
 
-    fun isBackStackEmpty(): Boolean
-    {
-        if (supportFragmentManager.backStackEntryCount == 0)
-        {
+    fun isBackStackEmpty(): Boolean {
+        if (supportFragmentManager.backStackEntryCount == 0) {
             return true
         }
         return false

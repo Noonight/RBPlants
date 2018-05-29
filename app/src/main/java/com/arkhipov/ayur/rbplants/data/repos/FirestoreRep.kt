@@ -5,7 +5,6 @@ import javax.inject.Inject
 
 class FirestoreRep @Inject constructor(
     private val firestore: FirebaseFirestore
-)
-{
+) {
 
 }

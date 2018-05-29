@@ -117,7 +117,8 @@ public abstract class NavigationFragment extends Fragment implements OnTabSelect
 
     @Override
     public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
-        Animation result = new Animation() {};
+        Animation result = new Animation() {
+        };
         result.setDuration(0);
         return result;
     }

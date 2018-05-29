@@ -14,8 +14,7 @@ import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragmen
 import javax.inject.Inject;
 
 public class NavigationMvpFragment<T extends MvpPresenter<V>, V extends MvpView>
-    extends NavigationFragment
-{
+    extends NavigationFragment {
     //@Inject
     protected T presenter;
 

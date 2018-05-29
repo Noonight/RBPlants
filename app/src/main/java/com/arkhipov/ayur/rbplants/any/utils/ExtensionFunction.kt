@@ -4,10 +4,8 @@ import android.view.View
 import android.view.ViewGroup
 
 class ExtensionFunction {
-    companion object
-    {
-        fun create(view: View, message: String, btnMessage: String, func: (View)-> Unit): Snackbar
-        {
+    companion object {
+        fun create(view: View, message: String, btnMessage: String, func: (View) -> Unit): Snackbar {
             return Snackbar.make(view, message, Snackbar.LENGTH_INDEFINITE)
                 .setAction(btnMessage, View.OnClickListener(func))
         }

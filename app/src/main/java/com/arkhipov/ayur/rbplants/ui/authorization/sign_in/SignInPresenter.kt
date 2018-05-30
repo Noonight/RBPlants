@@ -10,9 +10,6 @@ import javax.inject.Inject
 class SignInPresenter @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) : MvpPresenter<SignInView>() {
-    override fun updateView() {
-
-    }
 
     fun signInEmailPassword(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password)

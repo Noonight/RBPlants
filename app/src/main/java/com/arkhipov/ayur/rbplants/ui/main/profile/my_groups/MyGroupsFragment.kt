@@ -16,7 +16,7 @@ class MyGroupsFragment : NavigationFragment(), MyGroupsView {
     lateinit var presenter: MyGroupsPresenter
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
-        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_profile)
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_my_groups)
             .includeToolbar()
             //.includeBottomNavigation()
             .toolbarTitleRes(R.string.profile)

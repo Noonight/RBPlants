@@ -6,7 +6,5 @@ import javax.inject.Inject
 class MyGroupsPresenter @Inject constructor(
 
 ): MvpPresenter<MyGroupsView>() {
-    override fun updateView() {
 
-    }
 }

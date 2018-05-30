@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/tiet_password_signup"
+                    android:id="@+id/et_password_signup"
                     style="@style/AppTheme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import butterknife.ButterKnife
 import butterknife.OnClick
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
@@ -16,6 +17,7 @@ import com.arkhipov.ayur.rbplants.ui.authorization.AuthActivity
 import com.arkhipov.ayur.rbplants.ui.main.profile.edit.EditProfileFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.my_groups.MyPlantsFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.my_images.MyImagesFragment
+import kotlinx.android.synthetic.main.fragment_profile.*
 import javax.inject.Inject
 
 class ProfileFragment : NavigationFragment(), ProfileView {
@@ -33,7 +35,9 @@ class ProfileFragment : NavigationFragment(), ProfileView {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         App[activity!!].component.inject(this)
         presenter.attachView(this)
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val view = super.onCreateView(inflater, container, savedInstanceState)
+        ButterKnife.bind(this, view!!)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,7 +46,10 @@ class ProfileFragment : NavigationFragment(), ProfileView {
     }
 
     fun initViews() {
-
+        //iv_avatar_profile.setImageDrawable(presenter.getAvatar())
+        tv_full_name_profile.text = presenter.getFullName()
+        //tv_email_profile.text = presenter.getEmail()
+        //tv_score_profile.text = presenter.getScore()
     }
 
     @OnClick(R.id.fab_my_images_profile)

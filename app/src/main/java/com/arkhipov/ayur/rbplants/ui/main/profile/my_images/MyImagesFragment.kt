@@ -17,7 +17,7 @@ class MyImagesFragment : NavigationFragment(), MyImagesView {
     lateinit var presenter: MyImagesPresenter
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
-        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_profile)
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_my_images)
             .includeToolbar()
             //.includeBottomNavigation()
             .toolbarTitleRes(R.string.profile)

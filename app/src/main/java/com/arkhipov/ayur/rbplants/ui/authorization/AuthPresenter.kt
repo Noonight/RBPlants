@@ -9,9 +9,6 @@ import javax.inject.Inject
 class AuthPresenter @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) : MvpPresenter<AuthView>() {
-    override fun updateView() {
-
-    }
 
     fun getCurrentUser(): FirebaseUser? {
         if (firebaseAuth.currentUser != null)

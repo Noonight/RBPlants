@@ -8,8 +8,4 @@ class MainPresenter @Inject constructor(
 ) : MvpPresenter<MainView>() {
 
 
-    override fun updateView() {
-
-    }
-
 }

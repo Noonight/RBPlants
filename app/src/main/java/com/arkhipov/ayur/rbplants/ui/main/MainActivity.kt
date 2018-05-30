@@ -121,4 +121,8 @@ class MainActivity : AppCompatActivity(), MainView {
         }
         return false
     }
+
+    override fun hideBottomNavigation() {
+        bottomNavigation.hideBottomNavigation(false)
+    }
 }

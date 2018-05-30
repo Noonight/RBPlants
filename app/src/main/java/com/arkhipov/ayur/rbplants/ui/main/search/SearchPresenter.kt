@@ -6,8 +6,5 @@ import javax.inject.Inject
 class SearchPresenter @Inject constructor(
 
 ) : MvpPresenter<SearchView>() {
-    override fun updateView() {
-
-    }
 
 }

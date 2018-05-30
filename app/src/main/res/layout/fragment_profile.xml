@@ -118,7 +118,7 @@
 
                     <TextView
                         android:layout_gravity="center"
-                        style="@style/TextViewProfile"
+                        style="@style/FabText"
                         android:text="@string/my_gallery"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -141,7 +141,7 @@
 
                     <TextView
                         android:layout_gravity="center"
-                        style="@style/TextViewProfile"
+                        style="@style/FabText"
                         android:text="@string/my_groups"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -164,7 +164,7 @@
 
                     <TextView
                         android:layout_gravity="center"
-                        style="@style/TextViewProfile"
+                        style="@style/FabText"
                         android:text="@string/my_plants"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -188,7 +188,7 @@
 
                     <TextView
                         android:layout_gravity="center"
-                        style="@style/TextViewProfile"
+                        style="@style/FabText"
                         android:text="@string/sign_out"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -212,7 +212,7 @@
 
                     <TextView
                         android:layout_gravity="center"
-                        style="@style/TextViewProfile"
+                        style="@style/FabText"
                         android:text="@string/edit_profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />

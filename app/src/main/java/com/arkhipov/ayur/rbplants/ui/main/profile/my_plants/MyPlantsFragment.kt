@@ -16,7 +16,7 @@ class MyPlantsFragment : NavigationFragment(), MyPlantsView {
     lateinit var presenter: MyPlantsPresenter
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
-        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_profile)
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_my_plants)
             .includeToolbar()
             //.includeBottomNavigation()
             .toolbarTitleRes(R.string.profile)

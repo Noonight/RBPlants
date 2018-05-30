@@ -6,7 +6,5 @@ import javax.inject.Inject
 class EditProfilePresenter @Inject constructor(
 
 ): MvpPresenter<EditProfileView>() {
-    override fun updateView() {
 
-    }
 }

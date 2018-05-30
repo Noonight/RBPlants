@@ -6,7 +6,5 @@ import javax.inject.Inject
 class MyPlantsPresenter @Inject constructor(
     
 ): MvpPresenter<MyPlantsView>() {
-    override fun updateView() {
 
-    }
 }

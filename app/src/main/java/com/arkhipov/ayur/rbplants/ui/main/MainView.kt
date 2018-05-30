@@ -16,4 +16,6 @@ interface MainView : MvpView {
     /**
      * Show [ProfileFragment]*/
     fun showProfile()
+
+    fun hideBottomNavigation()
 }

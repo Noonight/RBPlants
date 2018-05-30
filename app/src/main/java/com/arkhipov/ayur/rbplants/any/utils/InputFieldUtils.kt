@@ -9,6 +9,15 @@ import java.util.regex.Pattern
 
 class InputFieldUtils {
     companion object {
+
+        fun isEmpty(vararg args: Editable): Boolean {
+            args.forEach {
+                if (isEmpty(it))
+                    return true
+            }
+            return false
+        }
+
         fun isEmpty(et: EditText): Boolean {
             if (TextUtils.isEmpty(et.text))
                 return true

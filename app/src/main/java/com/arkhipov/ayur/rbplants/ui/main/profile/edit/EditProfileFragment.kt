@@ -9,6 +9,7 @@ import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.AutoLayoutNavigationBuilder
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationBuilder
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragment
+import com.arkhipov.ayur.rbplants.ui.main.MainActivity
 import com.arkhipov.ayur.rbplants.ui.main.profile.ProfilePresenter
 import javax.inject.Inject
 
@@ -17,14 +18,14 @@ class EditProfileFragment : NavigationFragment(), EditProfileView {
     lateinit var presenter: EditProfilePresenter
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
-        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_profile)
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_edit_profile)
             .includeToolbar()
             //.includeBottomNavigation()
-            .toolbarTitleRes(R.string.profile)
-        //.toolbarNavigationIcon()
+            .toolbarTitleRes(R.string.edit_profile)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        (activity!! as MainActivity).hideBottomNavigation()
         App[activity!!].component.inject(this)
         presenter.attachView(this)
         return super.onCreateView(inflater, container, savedInstanceState)

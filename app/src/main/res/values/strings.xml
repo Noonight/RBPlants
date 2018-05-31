@@ -32,4 +32,8 @@
     <string name="my_gallery">My gallery</string>
     <string name="score">Score</string>
     <string name="save">Save</string>
+    <string name="invalid_email_address">Invalid email address</string>
+    <string name="invalid_password">Invalid password</string>
+    <string name="input_password">Input password</string>
+    <string name="email_sended">Email sended</string>
 </resources>

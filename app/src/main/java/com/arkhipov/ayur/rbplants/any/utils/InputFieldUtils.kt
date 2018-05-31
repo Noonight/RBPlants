@@ -37,21 +37,11 @@ class InputFieldUtils {
         }
 
         fun isEmailValid(email: String): Boolean {
-            val expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+            val expression = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$"
 
-            val pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-            val matcher = pattern.matcher(email);
-            if (matcher.matches()) {
-                return true
-            }
-            return false;
-            //val emailValidator = EmailValidator.getInstance()
-            /*val emailValidator = android.util.Patterns.EMAIL_ADDRESS.matcher(email)
-            if (!isEmpty(email))
-            {
-                return emailValidator.matches()
-            }*/
-            //return false
+            val pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE)
+            val matcher = pattern.matcher(email)
+            return matcher.matches()
         }
 
         fun isPasswordValid(password: String): Boolean {

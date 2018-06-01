@@ -11,6 +11,7 @@ interface SignInView : MvpView {
     fun showInvalidEmail()
     fun showInvalidPassword()
     fun showEmailSendSnack(email: String)
+    fun showEmailNotSendSnack(email: String)
 
     fun hideInvalidEmail()
     fun hideInvalidPassword()

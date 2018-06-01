@@ -49,6 +49,7 @@ class SignInPresenter @Inject constructor(
                 if (it.isSuccessful) {
                     view.showEmailSendSnack(email)
                 } else {
+                    view.showEmailNotSendSnack(email)
                     Log.w(it.exception)
                 }
             }

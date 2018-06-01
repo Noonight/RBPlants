@@ -36,4 +36,5 @@
     <string name="invalid_password">Invalid password</string>
     <string name="input_password">Input password</string>
     <string name="email_sended">Email sended</string>
+    <string name="email_not_sended">Email not sended</string>
 </resources>

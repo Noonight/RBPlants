@@ -71,7 +71,13 @@ class SignInFragment : NavigationFragment(), SignInView {
 
     override fun showEmailSendSnack(email: String) {
         SnackbarUtils
-            .create(view!!, "${resources.getString(R.string.email_sended)} $email")
+            .create(view!!, "${resources.getString(R.string.email_sended)} on $email")
+            .show()
+    }
+
+    override fun showEmailNotSendSnack(email: String) {
+        SnackbarUtils
+            .create(view!!, "${resources.getString(R.string.email_not_sended)} on $email")
             .show()
     }
 
@@ -107,6 +113,7 @@ class SignInFragment : NavigationFragment(), SignInView {
     override fun onRecoverTvPressed() {
         DialogUtils.createEmailOkCancel(context!!, R.string.recovery_password, R.string.input_password, ok = {
             presenter.onRecoveryTvPressed(it)
+            Log.d("recovery ok dialog pressed")
         }).show()
     }
 

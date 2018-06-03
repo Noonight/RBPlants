@@ -1,6 +1,7 @@
 package com.arkhipov.ayur.rbplants.ui.main.profile
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,10 +47,7 @@ class ProfileFragment : NavigationFragment(), ProfileView {
     }
 
     fun initViews() {
-        //iv_avatar_profile.setImageDrawable(presenter.getAvatar())
-        tv_full_name_profile.text = presenter.getFullName()
-        //tv_email_profile.text = presenter.getEmail()
-        //tv_score_profile.text = presenter.getScore()
+        presenter.onInitView()
     }
 
     @OnClick(R.id.fab_my_images_profile)
@@ -114,5 +112,21 @@ class ProfileFragment : NavigationFragment(), ProfileView {
         val intent = Intent(activity!!, AuthActivity::class.java)
         startActivity(intent)
         activity!!.finish()
+    }
+
+    override fun bindTvFullName(fullName: String) {
+        tv_full_name_profile.text = fullName
+    }
+
+    override fun bindTvEmail(email: String) {
+        tv_email_profile.text = email
+    }
+
+    override fun bindTvScore(score: String) {
+        tv_score_profile.text = score
+    }
+
+    override fun bindIvAvatar(drawable: Drawable) {
+        iv_avatar_profile.setImageDrawable(drawable)
     }
 }

@@ -3,6 +3,7 @@ package com.arkhipov.ayur.rbplants.ui.main.profile
 import android.graphics.drawable.Drawable
 import com.arkhipov.ayur.rbplants.any.base.base_mvp.MvpPresenter
 import com.arkhipov.ayur.rbplants.any.utils.Log
+import com.arkhipov.ayur.rbplants.data.model.UserFire
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -20,24 +21,18 @@ class ProfilePresenter @Inject constructor(
         view.showAuthActivity()
     }
 
-    fun getAvatar(): Drawable? {
-        /*firebaseAuth.currentUser?.photoUrl*/
-        return null
-    }
-
-    fun getFullName(): CharSequence? {
-        var fullName = ""
+    fun onInitView() {
+        val user = firebaseAuth.currentUser
         firestore.collection("users")
             .get()
             .addOnCompleteListener {
-                if (it.isComplete) {
-                    it.result.documents.forEach {
-                        if (it.data.containsKey("full_name")) {
-                            Log.d("Full name found!!! ${it.data.keys}")
-                        }
-                        fullName = it.data.toString()
-                        Log.d(it.data.toString())
-                    }
+                if (it.isSuccessful) {
+                    val document = it.result.filter { it.id == user!!.uid }.getOrNull(0)
+                    val getUser = document.let { document?.data }
+                    val user = UserFire.importDoc(getUser!!)
+                    view.bindTvFullName(user.fullName)
+                    view.bindTvEmail(user.email)
+                    view.bindTvScore(user.score.toString())
                 } else {
                     Log.w(it.exception)
                 }
@@ -45,14 +40,5 @@ class ProfilePresenter @Inject constructor(
             .addOnFailureListener {
                 Log.w(it)
             }
-        return fullName
-    }
-
-    fun getEmail(): CharSequence? {
-        return null
-    }
-
-    fun getScore(): CharSequence? {
-        return null
     }
 }

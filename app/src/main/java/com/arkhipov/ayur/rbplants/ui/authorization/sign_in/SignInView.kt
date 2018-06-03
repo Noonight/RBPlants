@@ -10,6 +10,10 @@ interface SignInView : MvpView {
 
     fun showInvalidEmail()
     fun showInvalidPassword()
+
+    /*
+    * Snackbar
+    * */
     fun showEmailSendSnack(email: String)
     fun showEmailNotSendSnack(email: String)
 

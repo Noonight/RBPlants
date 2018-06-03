@@ -4,6 +4,7 @@ import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.di.modules.ContextModule
 import com.arkhipov.ayur.rbplants.di.modules.FirebaseModule
 import com.arkhipov.ayur.rbplants.di.modules.RealmHelperModule
+import com.arkhipov.ayur.rbplants.di.modules.RxModule
 import com.arkhipov.ayur.rbplants.ui.authorization.AuthActivity
 import com.arkhipov.ayur.rbplants.ui.authorization.sign_in.SignInFragment
 import com.arkhipov.ayur.rbplants.ui.authorization.sign_up.SignUpFragment
@@ -21,7 +22,11 @@ import javax.inject.Singleton
 
 
 @Singleton
-@Component(modules = [(FirebaseModule::class), (ContextModule::class), (RealmHelperModule::class)])
+@Component(modules = [
+    (FirebaseModule::class),
+    (ContextModule::class),
+    (RealmHelperModule::class),
+    (RxModule::class)])
 interface AppComponent {
     fun inject(app: App)
 

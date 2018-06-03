@@ -117,13 +117,13 @@ class SignInFragment : NavigationFragment(), SignInView {
         }).show()
     }
 
-    @OnClick(R.id.et_email_signin)
+    @OnTextChanged(R.id.et_email_signin)
     override fun onEtEmailTextChanged() {
         if (ti_wrapper_et_email_signin.error != null)
             hideInvalidEmail()
     }
 
-    @OnClick(R.id.et_password_signin)
+    @OnTextChanged(R.id.et_password_signin)
     override fun onEtPasswordTextChanged() {
         if (ti_wrapper_et_password_signin.error != null)
             hideInvalidPassword()

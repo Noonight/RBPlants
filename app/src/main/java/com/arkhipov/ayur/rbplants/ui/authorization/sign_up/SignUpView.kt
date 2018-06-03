@@ -8,4 +8,21 @@ interface SignUpView : MvpView {
 
     fun onSignUpBtnPressed()
     fun onSignInTvPressed()
+
+    fun showInvalidEmail()
+    fun showInvalidPassword()
+    fun showInvalidConfirmPassword()
+    fun showInvalidFullName()
+
+    fun hideInvalidEmail()
+    fun hideInvalidPassword()
+    fun hideInvalidConfirmPassword()
+    fun hideInvalidFullName()
+
+    fun onEtFullNameTextChanged()
+    fun onEtEmailTextChanged()
+    fun onEtPasswordTextChanged()
+    fun onEtConfirmPasswordTextChanged()
+
+    fun showToast(message: String)
 }

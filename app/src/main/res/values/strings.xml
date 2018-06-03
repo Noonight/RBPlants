@@ -37,4 +37,6 @@
     <string name="input_password">Input password</string>
     <string name="email_sended">Email sended</string>
     <string name="email_not_sended">Email not sended</string>
+    <string name="not_match_password">Passwords do not match</string>
+    <string name="not_be_empty">Can\'t be empty</string>
 </resources>

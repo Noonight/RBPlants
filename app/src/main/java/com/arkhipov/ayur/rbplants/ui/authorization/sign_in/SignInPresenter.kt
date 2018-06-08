@@ -6,6 +6,7 @@ import com.arkhipov.ayur.rbplants.any.utils.Log
 import com.arkhipov.ayur.rbplants.any.base.base_mvp.MvpPresenter
 import com.arkhipov.ayur.rbplants.any.utils.InputFieldUtils
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import javax.inject.Inject
 
 
@@ -65,6 +66,8 @@ class SignInPresenter @Inject constructor(
                     view.showMain()
                     Log.d(firebaseAuth.currentUser.toString())
                 } else {
+                    if (it.exception is FirebaseAuthInvalidUserException)
+                        view.showToast("User not found")
                     Log.w(it.exception)
                 }
             }

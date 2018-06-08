@@ -23,7 +23,7 @@ class ProfilePresenter @Inject constructor(
 
     fun onInitView() {
         val user = firebaseAuth.currentUser
-        firestore.collection("users")
+        /*firestore.collection("users")
             .get()
             .addOnCompleteListener {
                 if (it.isSuccessful) {
@@ -39,6 +39,6 @@ class ProfilePresenter @Inject constructor(
             }
             .addOnFailureListener {
                 Log.w(it)
-            }
+            }*/
     }
 }

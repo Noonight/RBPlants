@@ -125,4 +125,8 @@ class MainActivity : AppCompatActivity(), MainView {
     override fun hideBottomNavigation() {
         bottomNavigation.hideBottomNavigation(false)
     }
+
+    override fun showBottomNavigation() {
+        bottomNavigation.restoreBottomNavigation(false)
+    }
 }

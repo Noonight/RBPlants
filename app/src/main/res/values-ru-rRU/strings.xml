@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Определитель растений РБ</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="sign_in">Авторизация</string>
+    <string name="password_hint">Пароль</string>
+    <string name="email_hint">Электронная почта</string>
+    <string name="recovery_password">Восстановить пароль</string>
+    <string name="hello">Привет</string>
+    <string name="confirm_exit">Подтвердите выход</string>
+    <string name="ok">Ок</string>
+    <string name="cancel">Отмена</string>
+    <string name="full_name_signup">ФИО</string>
+    <string name="confirm_password_hint">Подтвердите пароль</string>
+    <string name="alert_sign_out">Вы действительно хотите выйти?</string>
+    <string name="search">Поиск</string>
+    <string name="nav_item_search">Поиск</string>
+    <string name="nav_item_data">Данные</string>
+    <string name="nav_item_profile_menu">Профиль</string>
+    <string name="data">Данные</string>
+    <string name="menu_profile">Меню профиль</string>
+    <string name="profile">Профиль</string>
+    <string name="full_name">ФИО</string>
+    <string name="email">Электронная почта</string>
+    <string name="login">Логин</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="role">Роль</string>
+    <string name="sign_out">Выход</string>
+    <string name="edit">Изменить</string>
+    <string name="edit_profile">Изменить профиль</string>
+    <string name="my_plants">Растения</string>
+    <string name="my_groups">Группы</string>
+    <string name="my_gallery">Галерея</string>
+    <string name="score">Активность</string>
+    <string name="save">Сохранить</string>
+    <string name="invalid_email_address">Некорректная электронная почта</string>
+    <string name="invalid_password">Некорректный пароль</string>
+    <string name="input_password">Введите пароль</string>
+    <string name="email_sended">Электронная почта отправлена</string>
+    <string name="email_not_sended">Электронная почта не отправлена</string>
+    <string name="not_match_password">Не введен пароль</string>
+    <string name="not_be_empty">Не может быть пустым</string>
+    <string name="nav_item_camera">Камера</string>
+    <string name="take_a_photo">Сделайте фотографию</string>
+</resources>

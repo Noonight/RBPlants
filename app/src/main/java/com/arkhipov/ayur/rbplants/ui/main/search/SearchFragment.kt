@@ -18,7 +18,7 @@ class SearchFragment : NavigationFragment(), SearchView {
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_search)
             .includeToolbar()
-            .includeBottomNavigation()
+            //.includeBottomNavigation()
             .toolbarTitleRes(R.string.search)
             .toolbarNavigationIcon(-1)
     }

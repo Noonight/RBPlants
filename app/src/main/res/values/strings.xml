@@ -11,7 +11,7 @@
     <string name="cancel">Cancel</string>
     <string name="full_name_signup">Full name</string>
     <string name="confirm_password_hint">Confirm password</string>
-    <string name="alert">Alert</string>
+    <string name="alert_sign_out">Sign out?</string>
     <string name="search">Search</string>
     <string name="nav_item_search">Search</string>
     <string name="nav_item_data">Data</string>
@@ -39,4 +39,14 @@
     <string name="email_not_sended">Email not sended</string>
     <string name="not_match_password">Passwords do not match</string>
     <string name="not_be_empty">Can\'t be empty</string>
+    <string name="nav_item_camera">Camera</string>
+    <string name="take_a_photo">Take a photo</string>
+    <string name="flash_auto">Flash auto</string>
+    <string name="switch_camera">Switch camera</string>
+    <string name="flash_off">Flash off</string>
+    <string name="flash_on">Flash on</string>
+    <string name="input_photo_name">Input photo name</string>
+    <string name="just_simple_name">Just simple name</string>
+    <string name="need_input_photo_name">Need input photo name</string>
+    <string name="photos">Photos</string>
 </resources>

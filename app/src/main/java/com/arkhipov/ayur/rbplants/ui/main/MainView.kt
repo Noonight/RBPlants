@@ -11,7 +11,7 @@ interface MainView : MvpView {
     /**
      * Show [DataFragment]
      * */
-    fun showData()
+    fun showCamera()
 
     /**
      * Show [ProfileFragment]*/

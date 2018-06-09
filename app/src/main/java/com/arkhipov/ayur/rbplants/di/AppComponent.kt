@@ -9,13 +9,13 @@ import com.arkhipov.ayur.rbplants.ui.authorization.AuthActivity
 import com.arkhipov.ayur.rbplants.ui.authorization.sign_in.SignInFragment
 import com.arkhipov.ayur.rbplants.ui.authorization.sign_up.SignUpFragment
 import com.arkhipov.ayur.rbplants.ui.main.MainActivity
-import com.arkhipov.ayur.rbplants.ui.main.data.DataFragment
+import com.arkhipov.ayur.rbplants.ui.main.camera.CameraFragment
+import com.arkhipov.ayur.rbplants.ui.main.camera.photo_change_tag.PhotoChangeTagFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.ProfileFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.edit.EditProfileFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.my_groups.MyGroupsFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.my_groups.MyPlantsFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.my_images.MyImagesFragment
-import com.arkhipov.ayur.rbplants.ui.main.profile.my_images.MyImagesPresenter
 import com.arkhipov.ayur.rbplants.ui.main.search.SearchFragment
 import dagger.Component
 import javax.inject.Singleton
@@ -40,7 +40,7 @@ interface AppComponent {
 
     fun inject(searchFragment: SearchFragment)
 
-    fun inject(dataFragment: DataFragment)
+    fun inject(cameraFragment: CameraFragment)
 
     fun inject(profile: ProfileFragment)
 
@@ -51,6 +51,8 @@ interface AppComponent {
     fun inject(myGroupsFragment: MyGroupsFragment)
 
     fun inject(myPlantsFragment: MyPlantsFragment)
+
+    fun inject(photoChangeTagFragment: PhotoChangeTagFragment)
 }
 
 /*@Singleton

@@ -80,7 +80,7 @@ class AuthActivity : AppCompatActivity(), AuthView {
     override fun onBackPressed() {
         Log.d("Back stack entry count = ${supportFragmentManager.backStackEntryCount}")
         if (isBackStackEmpty()) {
-            DialogUtils.createOkCancel(this, R.string.alert, R.string.confirm_exit, ok = {
+            DialogUtils.createOkCancel(this, R.string.alert_sign_out, R.string.confirm_exit, ok = {
                 Log.d("Exit DialogUtils positive pressed")
                 finish()
             }, cancel = {

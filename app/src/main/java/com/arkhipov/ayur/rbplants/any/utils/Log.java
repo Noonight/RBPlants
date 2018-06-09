@@ -11,6 +11,10 @@ public final class Log {
         android.util.Log.w(getLocation(), mock, e);
     }
 
+    public static void w(String message, Exception e) {
+        android.util.Log.w(getLocation(), message, e);
+    }
+
     public static void l() {
         android.util.Log.d(getLocation(), "" + mock);
     }

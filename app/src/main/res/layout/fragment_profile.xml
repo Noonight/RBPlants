@@ -1,221 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_gravity="top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:background="@color/primary"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary"
                 android:gravity="center"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/iv_avatar_profile"
-                    android:src="@drawable/profile"
                     android:layout_width="140dp"
+                    android:layout_height="140dp"
                     android:paddingTop="16dp"
-                    android:layout_height="140dp" />
+                    android:src="@drawable/profile" />
 
                 <TextView
                     android:id="@+id/tv_full_name_profile"
-                    android:gravity="center"
                     style="@style/TextViewProfile"
-                    android:text="Full name tmp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Мафинов Николай Соболев" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="@dimen/activity_min_margin"
-                android:layout_height="wrap_content">
+                android:padding="@dimen/activity_min_margin">
 
                 <LinearLayout
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/TextViewProfile"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:text="@string/email"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/email" />
 
                     <TextView
-                        android:textSize="16dp"
                         android:id="@+id/tv_email_profile"
                         style="@style/TextViewProfile"
-                        android:layout_gravity="center"
-                        android:text="email tmp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="mafsin@gmail.com"
+                        android:textSize="16dp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/TextViewProfile"
-                        android:layout_gravity="center"
-                        android:text="@string/score"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/score" />
 
                     <TextView
-                        android:textSize="16dp"
                         android:id="@+id/tv_score_profile"
                         style="@style/TextViewProfile"
-                        android:layout_gravity="center"
-                        android:text="score tmp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="0"
+                        android:textSize="16dp" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
             <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="36dp"
                 android:layout_marginStart="36dp"
-                android:columnCount="3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:columnCount="3">
 
                 <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content">
+                    android:orientation="vertical">
 
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/fab_my_images_profile"
-                        android:src="@drawable/ic_image"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:foregroundGravity="center"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/ic_image" />
 
                     <TextView
-                        android:layout_gravity="center"
                         style="@style/FabText"
-                        android:text="@string/my_gallery"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/my_gallery" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content">
+                    android:orientation="vertical">
 
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/fab_my_groups_profile"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_group"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:foregroundGravity="center"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/ic_group" />
 
                     <TextView
-                        android:layout_gravity="center"
                         style="@style/FabText"
-                        android:text="@string/my_groups"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/my_groups" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content">
+                    android:orientation="vertical">
 
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/fab_my_plants_profile"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_flower"
                         android:foregroundGravity="center"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/ic_flower" />
 
                     <TextView
-                        android:layout_gravity="center"
                         style="@style/FabText"
-                        android:text="@string/my_plants"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/my_plants" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="16dp"
+                    android:layout_width="wrap_content"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content">
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
 
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/fab_sign_out_profile"
-                        android:src="@drawable/exit"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:foregroundGravity="center"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/exit" />
 
                     <TextView
-                        android:layout_gravity="center"
                         style="@style/FabText"
-                        android:text="@string/sign_out"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/sign_out" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="16dp"
+                    android:layout_width="wrap_content"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content">
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
 
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/fab_edit_profile"
                         style="@style/Widget.AppCompat.Button.Colored"
-                        android:src="@drawable/edit"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:foregroundGravity="center"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/edit" />
 
                     <TextView
-                        android:layout_gravity="center"
                         style="@style/FabText"
-                        android:text="@string/edit_profile"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/edit_profile" />
 
                 </LinearLayout>
 
@@ -248,7 +249,6 @@
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
-
 
 
 </FrameLayout>

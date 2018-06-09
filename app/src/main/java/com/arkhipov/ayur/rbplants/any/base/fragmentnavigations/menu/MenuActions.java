@@ -36,6 +36,12 @@ public final class MenuActions implements PopupMenu.OnMenuItemClickListener {
             return this;
         }
 
+        public Builder action(int itemId, MenuItem item, MenuAction action) {
+            actions.put(itemId, action == null ? DUMMY : action);
+
+            return this;
+        }
+
         public Builder append(MenuActions menuActions) {
             return append(menuActions.actions);
         }

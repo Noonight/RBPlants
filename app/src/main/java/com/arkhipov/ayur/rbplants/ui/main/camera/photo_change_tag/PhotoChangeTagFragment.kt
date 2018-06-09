@@ -1,4 +1,4 @@
-package com.arkhipov.ayur.rbplants.ui.main.data
+package com.arkhipov.ayur.rbplants.ui.main.camera.photo_change_tag
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,19 +9,18 @@ import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.AutoLayoutNavigationBuilder
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationBuilder
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragment
-import com.arkhipov.ayur.rbplants.ui.main.search.SearchFragment
 import javax.inject.Inject
 
-class DataFragment : NavigationFragment(), DataView {
+class PhotoChangeTagFragment : NavigationFragment(), PhotoChangeTagView {
     @Inject
-    lateinit var presenter: DataPresenter
+    lateinit var presenter: PhotoChangeTagPresenter
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
-        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_data)
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_photo_detail)
             .includeToolbar()
-            .includeBottomNavigation()
-            .toolbarTitleRes(R.string.data)
-            .toolbarNavigationIcon(-1)
+            //.includeBottomNavigation()
+            .toolbarTitleRes(R.string.photos)
+        //.toolbarNavigationIcon()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,7 +35,6 @@ class DataFragment : NavigationFragment(), DataView {
     }
 
     fun initViews() {
-        //SnackbarUtils.create(view!!, "Hello! searchFragment").show()
-    }
 
+    }
 }

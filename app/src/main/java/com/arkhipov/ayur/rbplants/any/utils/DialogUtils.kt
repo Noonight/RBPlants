@@ -9,6 +9,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.EditText
 import com.arkhipov.ayur.rbplants.R
 
 class DialogUtils() {
@@ -76,6 +77,52 @@ class DialogUtils() {
                     }
                 }
             }
+            return dialogBuilder
+        }
+
+        inline fun createSingleEtOkCancel(context: Context, title: Int, message: Int,
+                                          crossinline ok: (String) -> Unit, crossinline cancel: () -> Unit?): AlertDialog {
+            val layoutInflater = LayoutInflater.from(context)
+            val view = layoutInflater.inflate(R.layout.dialog_input_field_box, null)
+            val et = view.findViewById<EditText>(R.id.et_field_dialog)
+            val ti_wrapper_dialog = view.findViewById<TextInputLayout>(R.id.ti_wrapper_field_dialog)
+
+            et.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                }
+
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    if (ti_wrapper_dialog.error != null)
+                        ti_wrapper_dialog.error = null
+                }
+            })
+
+            val dialogBuilder = AlertDialog.Builder(context)
+                .setView(view)
+                .setTitle(title)
+                //.setMessage(message)
+                .setPositiveButton(R.string.save, null)
+                .setNegativeButton(R.string.cancel, {
+                    dialog, which ->
+                    cancel()
+                })
+                .create()
+
+            dialogBuilder.setOnShowListener {
+                val okBtn = (dialogBuilder as AlertDialog).getButton(AlertDialog.BUTTON_POSITIVE)
+                okBtn.setOnClickListener {
+                    if (!InputFieldUtils.isEmpty(et.text.toString())) {
+                        ok(et.text.toString())
+                        dialogBuilder.dismiss()
+                    } else {
+                        ti_wrapper_dialog.error = context.resources.getString(R.string.not_be_empty)
+                    }
+                }
+            }
+
             return dialogBuilder
         }
     }

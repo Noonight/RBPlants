@@ -11,9 +11,6 @@ data class UserFire(
     var score: Long = 0L, // Score count
     var groupId: String = ""
 ) {
-
-
-
     companion object {
         val TYPE_ADMIN = "role_admin"
         val TYPE_USER = "role_user"
@@ -35,5 +32,15 @@ data class UserFire(
         }
 
         fun getCollection(): String = "users"
+    }
+}
+
+data class UserFirePhotos(
+    var datetime: String = "",
+    var pathToPhoto: String = "",
+    var status: String = ""
+) {
+    companion object {
+        fun getCollection() = "photos"
     }
 }

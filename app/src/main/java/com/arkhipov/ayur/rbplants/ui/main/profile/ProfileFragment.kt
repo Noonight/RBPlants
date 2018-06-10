@@ -15,7 +15,9 @@ import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationBuilder
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationFragment
 import com.arkhipov.ayur.rbplants.any.utils.Log
 import com.arkhipov.ayur.rbplants.ui.authorization.AuthActivity
+import com.arkhipov.ayur.rbplants.ui.main.MainActivity
 import com.arkhipov.ayur.rbplants.ui.main.profile.edit.EditProfileFragment
+import com.arkhipov.ayur.rbplants.ui.main.profile.my_groups.MyGroupsFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.my_groups.MyPlantsFragment
 import com.arkhipov.ayur.rbplants.ui.main.profile.my_images.MyImagesFragment
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -77,6 +79,7 @@ class ProfileFragment : NavigationFragment(), ProfileView {
 
     override fun showEditProfileFragment() {
         Log.d("show Edit profile fragment")
+        (activity!! as MainActivity).hideBottomNavigation()
         activity!!.supportFragmentManager
             .beginTransaction()
             .replace(R.id.main_fragment_container, EditProfileFragment())
@@ -85,6 +88,7 @@ class ProfileFragment : NavigationFragment(), ProfileView {
     }
 
     override fun showMyImagesFragment() {
+        (activity!! as MainActivity).hideBottomNavigation()
         activity!!.supportFragmentManager
             .beginTransaction()
             .replace(R.id.main_fragment_container, MyImagesFragment())
@@ -93,14 +97,16 @@ class ProfileFragment : NavigationFragment(), ProfileView {
     }
 
     override fun showMyGroupsFragment() {
+        (activity!! as MainActivity).hideBottomNavigation()
         activity!!.supportFragmentManager
             .beginTransaction()
-            .replace(R.id.main_fragment_container, MyPlantsFragment())
+            .replace(R.id.main_fragment_container, MyGroupsFragment())
             .addToBackStack(null)
             .commit()
     }
 
     override fun showMyPlantsFragment() {
+        (activity!! as MainActivity).hideBottomNavigation()
         activity!!.supportFragmentManager
             .beginTransaction()
             .replace(R.id.main_fragment_container, MyPlantsFragment())

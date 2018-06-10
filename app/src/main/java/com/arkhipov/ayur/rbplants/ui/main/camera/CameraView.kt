@@ -6,6 +6,9 @@ interface CameraView : MvpView {
     fun startCamera()
 
     fun onTakePhotoFabPressed()
+    fun onExitIvPressed()
+    fun onSwitchCameraIvPressed()
+    fun onSwitchFlashCameraIvPressed()
 
     fun onTakePhotoCamera(data: ByteArray)
 

@@ -171,19 +171,20 @@ class MainActivity : AppCompatActivity(), MainView {
             }, cancel = {
                 Log.d("Exit Dialog Utils negative pressed")
             }).show()
-        } else if (supportFragmentManager.findFragmentByTag(CameraFragment::class.java.simpleName) == supportFragmentManager.primaryNavigationFragment) {
+        } /*else if (supportFragmentManager.findFragmentByTag(CameraFragment::class.java.simpleName) == supportFragmentManager.primaryNavigationFragment) {
             //showBottomNavigation()
             //don't working
-        } else if (/*supportFragmentManager.backStackEntryCount > 0 && */bottomNavigation.isHidden) {
+        } else if (*//*supportFragmentManager.backStackEntryCount > 0 && *//*bottomNavigation.isHidden) {
             showBottomNavigation()
-        } else {
+        } */else {
             super.onBackPressed()
             Log.d("Navigation item BACK pressed!")
         }
         /*if (supportFragmentManager.backStackEntryCount > 0*//* && bottomNavigation.isHidden*//*) {
-            showBottomNavigation()
+
         }*/
-        showBottomNavigation() // TODO change
+        if (bottomNavigation.isHidden) showBottomNavigation() // TODO change
+        showBottomNavigation()
         //if (supportFragmentManager.back)
     }
 

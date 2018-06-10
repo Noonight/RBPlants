@@ -19,7 +19,7 @@ class MyGroupsFragment : NavigationFragment(), MyGroupsView {
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_my_groups)
             .includeToolbar()
             //.includeBottomNavigation()
-            .toolbarTitleRes(R.string.profile)
+            .toolbarTitleRes(R.string.my_groups)
         //.toolbarNavigationIcon()
     }
 

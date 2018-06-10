@@ -21,7 +21,7 @@ import com.arkhipov.ayur.rbplants.any.utils.Log
 import com.arkhipov.ayur.rbplants.ui.google_sheets.RequestPermissionsToolImpl
 import com.arkhipov.ayur.rbplants.ui.main.MainActivity
 import com.arkhipov.ayur.rbplants.ui.main.camera.photo_change_tag.PhotoChangeTagFragment
-import com.arkhipov.ayur.rbplants.ui.main.camera.photo_change_tag.PhotoChangeTagFragment_MembersInjector
+import com.google.android.cameraview.AspectRatio
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_camera.*
 import java.io.File
@@ -46,17 +46,16 @@ class CameraFragment : NavigationFragment(), CameraView {
 
     private val FLASH_OPTIONS = intArrayOf(com.google.android.cameraview.CameraView.FLASH_AUTO, com.google.android.cameraview.CameraView.FLASH_OFF, com.google.android.cameraview.CameraView.FLASH_ON)
 
-    private val FLASH_ICONS = intArrayOf(R.drawable.ic_flash_auto, R.drawable.ic_flash_off, R.drawable.ic_flash_on)
+    private val FLASH_ICONS = intArrayOf(R.drawable.ic_flash_auto_white_24dp, R.drawable.ic_flash_off_white_24dp, R.drawable.ic_flash_on_white_24dp)
 
     private val FLASH_TITLES = intArrayOf(R.string.flash_auto, R.string.flash_off, R.string.flash_on)
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_camera)
-            .includeToolbar()
+            //.includeToolbar()
             //.includeBottomNavigation()
-            .toolbarTitleRes(R.string.take_a_photo)
-            //.toolbarNavigationIcon(-1)
-            .menuRes(R.menu.menu_camera, MenuActions.Builder()
+            //.toolbarTitleRes(R.string.take_a_photo)
+            /*.menuRes(R.menu.menu_camera, MenuActions.Builder()
                 .action(R.id.switch_flash, {
                     val item = toolbar.menu.findItem(R.id.switch_flash)
                     mCurrentFlash = (mCurrentFlash + 1) % FLASH_OPTIONS.size
@@ -71,9 +70,7 @@ class CameraFragment : NavigationFragment(), CameraView {
                         com.google.android.cameraview.CameraView.FACING_BACK
                     else
                         com.google.android.cameraview.CameraView.FACING_FRONT
-                }))
-        //.menuRes(R.menu.menu_camera, MenuActions.MenuActionItem()
-        //.menuRes(R.menu.menu_camera)
+                }))*/
     }
 
     /*override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
@@ -118,16 +115,21 @@ class CameraFragment : NavigationFragment(), CameraView {
     }
 
     fun initViews() {
-
-        //toolbar.menu.findItem(R.id.switch_flash)
+        iv_switch_light_camera.visibility
+        iv_exit_camera.visibility
+        iv_switch_camera.visibility
 
         initCamera()
-        //startCamera()
-        //SnackbarUtils.create(view!!, "Hello! searchFragment").show()
     }
 
     fun initCamera() {
         cv_camera.addCallback(mCallback)
+        //Log.d(cv_camera.supportedAspectRatios.)
+        /*cv_camera.supportedAspectRatios.forEach {
+            Log.d(it.toString())
+        }*/
+        cv_camera.setAspectRatio(AspectRatio.of(16, 9))
+        //cv_camera.setAspectRatio()
         cv_camera.start()
     }
 
@@ -135,6 +137,32 @@ class CameraFragment : NavigationFragment(), CameraView {
     override fun onTakePhotoFabPressed() {
         //cv_camera.takePicture()
         presenter.onTakePhotoPressed()
+    }
+
+    @OnClick(R.id.iv_exit_camera)
+    override fun onExitIvPressed() {
+        //activity!!.main_bottom_navigation.setCurrentItem(0)
+        (activity!! as MainActivity).showBottomNavigation()
+        (activity!! as MainActivity).main_bottom_navigation.setCurrentItem(0, true)
+    }
+
+    @OnClick(R.id.iv_switch_camera)
+    override fun onSwitchCameraIvPressed() {
+        val facing = cv_camera.facing
+        cv_camera.facing = if (facing == com.google.android.cameraview.CameraView.FACING_FRONT)
+            com.google.android.cameraview.CameraView.FACING_BACK
+        else
+            com.google.android.cameraview.CameraView.FACING_FRONT
+    }
+
+    @OnClick(R.id.iv_switch_light_camera)
+    override fun onSwitchFlashCameraIvPressed() {
+        mCurrentFlash = (mCurrentFlash + 1) % FLASH_OPTIONS.size
+        //iv_switch_light_camera.setTitle(FLASH_TITLES[mCurrentFlash])
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            iv_switch_light_camera.setImageDrawable(context!!.getDrawable(FLASH_ICONS[mCurrentFlash]))
+        }
+        cv_camera.setFlash(FLASH_OPTIONS[mCurrentFlash])
     }
 
     override fun takePicture() {
@@ -168,6 +196,8 @@ class CameraFragment : NavigationFragment(), CameraView {
         }, {
             // TODO cancel
             activity!!.main_bottom_navigation.setCurrentItem(0)
+            (activity!! as MainActivity).showBottomNavigation()
+            (activity!! as MainActivity).main_bottom_navigation.setCurrentItem(0, true)
         }).show()
     }
 
@@ -244,6 +274,7 @@ class CameraFragment : NavigationFragment(), CameraView {
     }*/
 
     override fun onResume() {
+        cv_camera.setAspectRatio(AspectRatio.of(16, 9))
         cv_camera.start()
         super.onResume()
     }

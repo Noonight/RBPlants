@@ -36,8 +36,8 @@ class CameraPresenter @Inject constructor(
 
     fun savePhotoToCloudFirebase(byteArray: ByteArray, name: String) {
         val user = fireAuth.currentUser!!
-
-        val path = fireCloud.reference.child("${user.uid}/${UserFirePhotos.getCollection()}/${name}_${Timestamp.now().seconds * 1000}")
+        val createPath = "${user.uid}/${UserFirePhotos.getCollection()}/${name}_${Timestamp.now().seconds * 1000}"
+        val path = fireCloud.reference.child(createPath)
         //${Timestamp.now().toString()}
         /*val baos = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
@@ -61,9 +61,10 @@ class CameraPresenter @Inject constructor(
                         fireStore.collection(UserFire.getCollection())
                             .document(user.uid)
                             .collection(UserFirePhotos.getCollection())
-                            .document((Timestamp.now().seconds * 1000).toString())
+                            .document(createPath)
                             .set(UserFirePhotos(
-                                (Timestamp.now().seconds * 1000).toString(),
+                                //(Timestamp.now().seconds * 1000).toString(),
+                                createPath,
                                 downloadURL,
                                 "invalid"
                             ))

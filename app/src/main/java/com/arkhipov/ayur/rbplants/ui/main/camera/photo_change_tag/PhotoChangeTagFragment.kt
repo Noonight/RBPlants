@@ -16,7 +16,7 @@ class PhotoChangeTagFragment : NavigationFragment(), PhotoChangeTagView {
     lateinit var presenter: PhotoChangeTagPresenter
 
     override fun buildNavigation(): NavigationBuilder<out NavigationBuilder<*>> {
-        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_photo_detail)
+        return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_photo_change_tag)
             .includeToolbar()
             //.includeBottomNavigation()
             .toolbarTitleRes(R.string.photos)

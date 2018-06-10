@@ -20,7 +20,7 @@ class MyImagesFragment : NavigationFragment(), MyImagesView {
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_my_images)
             .includeToolbar()
             //.includeBottomNavigation()
-            .toolbarTitleRes(R.string.profile)
+            .toolbarTitleRes(R.string.my_gallery)
         //.toolbarNavigationIcon()
     }
 

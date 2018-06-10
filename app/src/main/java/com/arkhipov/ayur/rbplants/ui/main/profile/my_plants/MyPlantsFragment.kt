@@ -19,7 +19,7 @@ class MyPlantsFragment : NavigationFragment(), MyPlantsView {
         return AutoLayoutNavigationBuilder.navigation(R.layout.fragment_my_plants)
             .includeToolbar()
             //.includeBottomNavigation()
-            .toolbarTitleRes(R.string.profile)
+            .toolbarTitleRes(R.string.my_plants)
         //.toolbarNavigationIcon()
     }
 

@@ -42,4 +42,12 @@
     <string name="not_be_empty">Не может быть пустым</string>
     <string name="nav_item_camera">Камера</string>
     <string name="take_a_photo">Сделайте фотографию</string>
+    <string name="flash_auto">Камера автоматически</string>
+    <string name="switch_camera">Изменить камеру</string>
+    <string name="flash_off">Выключить свет</string>
+    <string name="flash_on">Включить свет</string>
+    <string name="input_photo_name">Введите название фото</string>
+    <string name="just_simple_name">Простое название</string>
+    <string name="need_input_photo_name">Нужно ввесть название фото</string>
+    <string name="photos">Фото</string>
 </resources>

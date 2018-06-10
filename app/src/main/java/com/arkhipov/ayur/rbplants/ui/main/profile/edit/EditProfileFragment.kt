@@ -25,7 +25,7 @@ class EditProfileFragment : NavigationFragment(), EditProfileView {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        (activity!! as MainActivity).hideBottomNavigation()
+        //(activity!! as MainActivity).hideBottomNavigation()
         App[activity!!].component.inject(this)
         presenter.attachView(this)
         return super.onCreateView(inflater, container, savedInstanceState)

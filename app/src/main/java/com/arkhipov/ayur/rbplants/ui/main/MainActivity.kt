@@ -2,6 +2,7 @@ package com.arkhipov.ayur.rbplants.ui.main
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Environment
@@ -19,9 +20,11 @@ import com.arkhipov.ayur.rbplants.ui.main.camera.CameraFragment
 import com.arkhipov.ayur.rbplants.ui.main.search.SearchFragment
 import com.arkhipov.ayur.rbplants.any.utils.DialogUtils
 import com.arkhipov.ayur.rbplants.any.utils.Log
+import com.arkhipov.ayur.rbplants.ui.google_sheets.GoogleSheetsActivity
 import com.arkhipov.ayur.rbplants.ui.google_sheets.RequestPermissionsToolImpl
 import com.arkhipov.ayur.rbplants.ui.main.profile.ProfileFragment
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import com.google.android.cameraview.CameraView
 import java.io.File
 import java.io.FileOutputStream
@@ -73,7 +76,12 @@ class MainActivity : AppCompatActivity(), MainView {
                 .navigationDefaults()
                 .navigationItems()
                 .bottomNavigationItems())
-        bottomNavigation.accentColor = resources.getColor(R.color.accent)
+        bottomNavigation.addItem(AHBottomNavigationItem(resources.getString(R.string.nav_item_search), R.drawable.search))
+        bottomNavigation.addItem(AHBottomNavigationItem(resources.getString(R.string.nav_item_camera), R.drawable.camera))
+        bottomNavigation.addItem(AHBottomNavigationItem(resources.getString(R.string.nav_item_profile_menu), R.drawable.profile))
+        bottomNavigation.addItem(AHBottomNavigationItem(resources.getString(R.string.admin), R.drawable.ic_code_black_24dp))
+        //bottomNavigation.accentColor = resources.getColor(R.color.accent)
+        bottomNavigation.accentColor = resources.getColor(R.color.primary_dark)
         bottomNavigation.setOnTabSelectedListener(object : AHBottomNavigation.OnTabSelectedListener {
             override fun onTabSelected(position: Int, wasSelected: Boolean): Boolean {
                 Log.d(" Bottom navigation pressed: position = $position and wasSelected = $wasSelected")
@@ -103,6 +111,11 @@ class MainActivity : AppCompatActivity(), MainView {
                  * [PROFILE_MENU]
                  * */
                     2 -> if (!wasSelected) showProfile()
+                    3 -> if (!wasSelected) {
+                        val intent = Intent(applicationContext, GoogleSheetsActivity::class.java)
+                        startActivity(intent)
+                        Log.d("START ACTIVITY GOOGLE SHEETS")
+                    }
                 }
                 return true
             }

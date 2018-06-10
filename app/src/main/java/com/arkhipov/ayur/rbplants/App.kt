@@ -64,10 +64,10 @@ class App : Application() {
         NavigationDefaultsHolder.initDefaults(NavigationDefaults()
             .navigationIcon(BACK, R.drawable.arrow_back)
             .navigationIcon(NAV_MENU, R.drawable.more_vert)
-            .navigationItem(SEARCH, R.string.nav_item_search, R.drawable.search, R.color.accent)
-            .navigationItem(DATA, R.string.nav_item_camera, R.drawable.camera, R.color.primary)
-            .navigationItem(PROFILE_MENU, R.string.nav_item_profile_menu, R.drawable.profile, R.color.secondary_text)
-            .defaultBottomNavigationItem(SEARCH)
+            //.navigationItem(SEARCH, R.string.nav_item_search, R.drawable.search, R.color.accent)
+            //.navigationItem(DATA, R.string.nav_item_camera, R.drawable.camera, R.color.primary)
+            //.navigationItem(PROFILE_MENU, R.string.nav_item_profile_menu, R.drawable.profile, R.color.secondary_text)
+            //.defaultBottomNavigationItem(SEARCH)
             .defaultNavigationIconType(BACK))
     }
 }

@@ -1,8 +1,21 @@
 package com.arkhipov.ayur.rbplants.ui.google_sheets;
 
 import com.arkhipov.ayur.rbplants.any.utils.Log;
+import com.arkhipov.ayur.rbplants.data.model.GroupRodovihPriznakov;
+import com.arkhipov.ayur.rbplants.data.model.GroupVidovihProznakov;
+import com.arkhipov.ayur.rbplants.data.model.NameRodovihGroup;
+import com.arkhipov.ayur.rbplants.data.model.NameVidovihGroup;
+import com.arkhipov.ayur.rbplants.data.model.OpredelenieRoda;
+import com.arkhipov.ayur.rbplants.data.model.OpredelenieVida;
+import com.arkhipov.ayur.rbplants.data.model.PriznakiRoda;
+import com.arkhipov.ayur.rbplants.data.model.PriznakiVida;
+import com.arkhipov.ayur.rbplants.data.model.Rod;
+import com.arkhipov.ayur.rbplants.data.model.Vid;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GooglePlayServicesAvailabilityIOException;
@@ -16,6 +29,8 @@ import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.services.sheets.v4.SheetsScopes;
 
 import com.google.api.services.sheets.v4.model.*;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import android.Manifest;
 import android.accounts.AccountManager;
@@ -145,6 +160,19 @@ public class GoogleSheetsActivity extends Activity {
 
     }
 
+    class DB {
+        public List<Rod> rods;
+        public List<PriznakiRoda> priznakiRodas;
+        public List<OpredelenieRoda> opredelenieRodas;
+        public List<GroupRodovihPriznakov> groupRodovihPriznakovs;
+        public List<NameRodovihGroup> nameRodovihGroups;
+        public List<Vid> vids;
+        public List<PriznakiVida> priznakiVidas;
+        public List<OpredelenieVida> opredelenieVidas;
+        public List<GroupVidovihProznakov> groupVidovihProznakovs;
+        public List<NameVidovihGroup> nameVidovihGroups;
+
+    }
 
     private class MakeRequestTask extends AsyncTask<Void, Void, List<String>> {
         private com.google.api.services.sheets.v4.Sheets mService = null;
@@ -161,8 +189,29 @@ public class GoogleSheetsActivity extends Activity {
         @Override
         protected List<String> doInBackground(Void... params) {
             try {
-                Log.d(getDataFromApi().toString());
-                return getDataFromApi();
+                //Log.d(getDataFromApi().toString());
+                List<String> data = getDataFromApi("1qhfYLcvHBxD0iCV3BWmXBfir3621gMhB56C4s12MOD8");
+                Log.d(data.toString());
+                /*FirebaseFirestore.getInstance()
+                    .collection("db")
+                    .add()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentReference> task) {
+                            if (task.isSuccessful()) {
+                                Log.d("SAVE DATA to rod complete");
+                            } else {
+                                Log.w(task.getException());
+                            }
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+
+                        }
+                    });*/
+                return getDataFromApi("1qhfYLcvHBxD0iCV3BWmXBfir3621gMhB56C4s12MOD8");
             } catch (UserRecoverableAuthIOException e) {
                 Log.w(e);
                 startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
@@ -174,19 +223,28 @@ public class GoogleSheetsActivity extends Activity {
             }
         }
 
-        private List<String> getDataFromApi() throws IOException {
-            String spreadsheetId = "1qhfYLcvHBxD0iCV3BWmXBfir3621gMhB56C4s12MOD8";
-            String range = "A2:C";
+        private List<String> getDataFromApi(String spreadsheet/*, String ranges*/) throws IOException {
+            //String spreadsheetId = "1qhfYLcvHBxD0iCV3BWmXBfir3621gMhB56C4s12MOD8";
+            //String range = "A2:C";
             List<String> results = new ArrayList<String>();
             ValueRange response = this.mService.spreadsheets().values()
-                .get(spreadsheetId, range)
+                .get(spreadsheet, "A2:G")
                 .execute();
             List<List<Object>> values = response.getValues();
 
+            //mService.spreadsheets().values().batchGet(spreadsheet).sh
+            Log.d(mService.spreadsheets().get(spreadsheet).getSpreadsheetId());
+            Log.d(mService.spreadsheets().values().batchGet(spreadsheet).getSpreadsheetId());
             if (values != null) {
-                results.add("id, name_ru, name_latin");
+                //results.add("id, name_ru, name_latin");
                 for (List row : values) {
-                    results.add(row.get(0) + ", " + row.get(1) + ", " + row.get(2));
+                    results.add(row.get(0) + ", "
+                        + row.get(1) + ", "
+                        + row.get(2) + ", "
+                        + row.get(3) + ", "
+                        + row.get(4) + ", "
+                        + row.get(5) + ", "
+                        + row.get(6) + ", ");
                 }
             }
             return results;

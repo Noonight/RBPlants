@@ -49,4 +49,6 @@
     <string name="just_simple_name">Just simple name</string>
     <string name="need_input_photo_name">Need input photo name</string>
     <string name="photos">Photos</string>
+    <string name="input_params_what_you_now">Input params what you now</string>
+    <string name="admin">Admin</string>
 </resources>

@@ -2,7 +2,7 @@ package com.arkhipov.ayur.rbplants.ui.google_sheets;
 
 import com.arkhipov.ayur.rbplants.any.utils.Log;
 import com.arkhipov.ayur.rbplants.data.model.GroupRodovihPriznakov;
-import com.arkhipov.ayur.rbplants.data.model.GroupVidovihProznakov;
+import com.arkhipov.ayur.rbplants.data.model.GroupVidovihPriznakov;
 import com.arkhipov.ayur.rbplants.data.model.NameRodovihGroup;
 import com.arkhipov.ayur.rbplants.data.model.NameVidovihGroup;
 import com.arkhipov.ayur.rbplants.data.model.OpredelenieRoda;
@@ -169,7 +169,7 @@ public class GoogleSheetsActivity extends Activity {
         public List<Vid> vids;
         public List<PriznakiVida> priznakiVidas;
         public List<OpredelenieVida> opredelenieVidas;
-        public List<GroupVidovihProznakov> groupVidovihProznakovs;
+        public List<GroupVidovihPriznakov> groupVidovihProznakovs;
         public List<NameVidovihGroup> nameVidovihGroups;
 
     }

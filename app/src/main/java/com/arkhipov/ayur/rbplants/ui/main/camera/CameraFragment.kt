@@ -142,7 +142,8 @@ class CameraFragment : NavigationFragment(), CameraView {
     @OnClick(R.id.iv_exit_camera)
     override fun onExitIvPressed() {
         //activity!!.main_bottom_navigation.setCurrentItem(0)
-        (activity!! as MainActivity).showBottomNavigation()
+        activity!!.onBackPressed()
+        //(activity!! as MainActivity).showBottomNavigation()
         (activity!! as MainActivity).main_bottom_navigation.setCurrentItem(0, true)
     }
 

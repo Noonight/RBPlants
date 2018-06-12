@@ -9,7 +9,10 @@ import android.os.Environment
 import android.os.Handler
 import android.os.HandlerThread
 import android.support.v7.app.AppCompatActivity
+import android.widget.FrameLayout
 import android.widget.Toast
+import butterknife.BindView
+import butterknife.ButterKnife
 import com.arkhipov.ayur.rbplants.App
 import com.arkhipov.ayur.rbplants.R
 import com.arkhipov.ayur.rbplants.any.base.fragmentnavigations.NavigationDefaults
@@ -39,6 +42,8 @@ class MainActivity : AppCompatActivity(), MainView {
 
     private lateinit var requestPermissionsToolImpl: RequestPermissionsToolImpl
 
+    @BindView(R.id.main_fragment_container) lateinit var mainContainer: FrameLayout
+
     companion object {
         val REQUEST_CAMERA_PERMISSION = 1007
     }
@@ -49,7 +54,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
         App[this].component.inject(this)
         presenter.attachView(this)
-
+        ButterKnife.bind(this)
         NavigationDefaults.NavigationDefaultsHolder.navigationDefaults()
             .navigationIconListener {
                 onBackPressed()
@@ -154,6 +159,7 @@ class MainActivity : AppCompatActivity(), MainView {
             .beginTransaction()
             .replace(R.id.main_fragment_container, SearchFragment(), SearchFragment::class.java.simpleName)
             .commit()
+        //showSearch()
     }
 
     override fun showCamera() {

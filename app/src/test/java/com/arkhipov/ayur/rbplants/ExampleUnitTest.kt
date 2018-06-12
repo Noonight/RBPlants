@@ -24,5 +24,8 @@ class ExampleUnitTest {
         //val calendar = Calendar.getInstance()
         val date = Date(timestamp.seconds * 1000)
         println("$date current time in time stamp")
+        val var0 = 700L
+        val var1 = 20L
+        println(var0 + var1)
     }
 }

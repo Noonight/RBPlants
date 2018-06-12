@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,28 +31,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />-->
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:layout_alignParentTop="true"
+        android:focusableInTouchMode="true"
+        android:focusedByDefault="true" />
+
+    <EditText
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
     <com.pchmn.materialchips.ChipsInput
         android:id="@+id/ci_input_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:padding="@dimen/activity_min_margin"
+        app:chip_backgroundColor="@color/accent"
+        app:chip_hasAvatarIcon="false"
+        app:chip_labelColor="@android:color/white"
         app:hint="@string/input_params_what_you_now"
         app:maxRows="3">
 
     </com.pchmn.materialchips.ChipsInput>
 
-    <android.support.v4.widget.NestedScrollView
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_search"
+        app:fabSize="mini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/activity_min_margin"
+        android:background="@null"
+        android:src="@drawable/ic_search_white_24dp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_list_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/activity_min_margin"
-        android:background="@color/accent">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_list_search"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </android.support.v4.widget.NestedScrollView>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/ci_input_search" />
 
 
-</LinearLayout>
+</RelativeLayout>
